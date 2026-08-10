@@ -5,211 +5,223 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Freelance Template</title>
     
-    <style>
-      img {
-        max-width: 100%;
-        height: auto;
-        object-fit: cover;
-      }
-      body {
-        color:forestgreen;
-        background-color:#F5EFD6;
-      }
-      footer {
-        text-align:center;
-      }
-      hr {
-        border: 2px solid forestgreen;
-      }
-      h1, header {
-        text-align:center;
-      }
-      h1 {
-        font-size:45px;
-      }
-      header, footer p {
-        font-size: 28px;
-      }
-      header, footer a {
-        font-size: 23px;
-      }
-      a {
-        color:#0B5E2E;
-        text-decoration:none;
-      }
-     .navbar {
-  background-color: white;
-  padding: 20px 0;
-  border-top: 3px solid forestgreen;
-  border-bottom: 3px solid forestgreen;
-  margin-top:25px;
-  margin-bottom:25px;
+    <style><style> 
+:root {
+  --primary-color: forestgreen;
+  --bg-color: #F5EFD6;
 }
 
-.nav-links {
-  display: flex;
-  justify-content: center;
-  gap: 3rem; /* perfect spacing */
+img { 
+  max-width: 100%; 
+  height: auto; 
+  object-fit: cover; 
+} 
+
+body { 
+  color: var(--primary-color); 
+  background-color: var(--bg-color); 
+  font-family: sans-serif; /* Adds a modern, clean font fallback */
+  margin: 0;
+  padding: 0;
+} 
+
+footer { 
+  text-align: center; 
+  padding: 2rem 0;
+} 
+
+hr { 
+  border: 2px solid var(--primary-color); 
+} 
+
+h1, header { 
+  text-align: center; 
+} 
+
+h1 { 
+  font-size: 45px; 
+  margin-top: 20px;
+} 
+
+header p, footer p { 
+  font-size: 28px; 
+} 
+
+header a, footer a { 
+  font-size: 23px; 
+} 
+
+a { 
+  color: #0B5E2E; 
+  text-decoration: none; 
+} 
+
+a:hover { 
+  color: var(--primary-color); 
 }
 
-.nav-links a {
-  font-size: 1.6rem;
-  color: #0B5E2E;
-  text-decoration: none;
-  padding-bottom: 6px;
-  transition: color 0.2s ease, border-bottom 0.2s ease;
+.navbar { 
+  background-color: white; 
+  padding: 20px 0; 
+  border-top: 3px solid var(--primary-color); 
+  border-bottom: 3px solid var(--primary-color); 
+  margin-top: 25px; 
+  margin-bottom: 25px; 
+} 
+
+.nav-links { 
+  display: flex; 
+  justify-content: center; 
+  gap: 3rem; 
+} 
+
+.nav-links a { 
+  font-size: 1.6rem; 
+  color: #0B5E2E; 
+  text-decoration: none; 
+  padding-bottom: 6px; 
+  transition: color 0.2s ease, border-bottom 0.2s ease; 
+} 
+
+.nav-links a:hover { 
+  color: var(--primary-color); 
+  border-bottom: 2px solid var(--primary-color); 
+} 
+
+.booking-title { 
+  text-align: center; 
+  font-size: 2rem; 
+  color: var(--primary-color); 
+  margin-bottom: 0.5rem; 
+} 
+
+.booking-subtitle { 
+  text-align: center; 
+  font-size: 1rem; 
+  margin-bottom: 2rem; 
+  color: #555; 
+} 
+
+#about, #services { 
+  padding: 3rem 1rem; 
+} 
+
+.about-container, .services-container { 
+  display: flex; 
+  align-items: center; 
+  gap: 2rem; 
+  max-width: 900px; 
+  margin: 0 auto; 
+  background: #fff; 
+  border-radius: 15px; 
+  padding: 2rem; 
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+} 
+
+.about-text h2, .services-text h2 { 
+  margin-bottom: 1rem; 
+  font-size: 2rem; 
+  color: var(--primary-color); 
+} 
+
+.about-text p, .services-text p { 
+  line-height: 1.6; 
+  font-size: 1.1rem; 
+} 
+
+.about-image img, .services-image img { 
+  width: 350px; 
+  height: auto; 
+  border-radius: 12px; 
+  object-fit: cover; 
+} 
+
+h2 { 
+  text-align: left; 
+} 
+
+#booking { 
+  background: white; /* Changed to white to match section card themes */
+  padding: 2rem; 
+  border-radius: 15px; 
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+  max-width: 500px; 
+  margin: 0 auto; /* Centers the form on the page */
+} 
+
+.form-group { 
+  margin-bottom: 1.25rem; 
+} 
+
+.form-row { 
+  display: flex; 
+  gap: 1rem; 
+} 
+
+.form-row .form-group { 
+  flex: 1; 
+} 
+
+label { 
+  display: block; 
+  margin-bottom: 0.5rem; 
+  font-weight: 500; 
+  font-size: 0.9rem; 
+} 
+
+input, select, textarea { 
+  width: 100%; 
+  padding: 0.625rem; 
+  border: 1px solid #d1d5db; 
+  border-radius: 4px; 
+  box-sizing: border-box; 
+  font-size: 1rem; 
+} 
+
+input:focus, select:focus, textarea:focus { 
+  outline: 2px solid var(--primary-color); 
+  outline-offset: -1px; 
+} 
+
+button { 
+  background-color: var(--bg-color); 
+  color: var(--primary-color); 
+  border: 2px solid var(--primary-color); 
+  border-radius: 15px; 
+  padding: 0.75rem 1.5rem; 
+  font-size: 1rem; 
+  font-weight: 600; 
+  cursor: pointer; 
+  width: 100%; 
+  transition: background-color 0.2s, color 0.2s; 
+} 
+
+button:hover { 
+  background-color: var(--primary-color);
+  color: white;
+} 
+
+/* Responsive rules for mobile screens */
+@media (max-width: 768px) {
+  .nav-links {
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .about-container, .services-container {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+  .about-image img, .services-image img {
+    width: 100%;
+    max-width: 100%;
+  }
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
 }
+</style>
 
-.nav-links a:hover {
-  color: forestgreen;
-  border-bottom: 2px solid forestgreen;
-}
-
-      a:hover {
-        color:forestgreen;
-      }
-     
-.booking-title {
-  text-align: center;
-  font-size: 2rem;
-  color: forestgreen;
-  margin-bottom: 0.5rem;
-}
-
-.booking-subtitle {
-  text-align: center;
-  font-size: 1rem;
-  margin-bottom: 2rem;
-  color: #555;
-}
-
-
-#about {
-  padding: 3rem 1rem;
-  align-self:left;
-}
-
-.about-container {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  max-width: 900px;
-  margin: 0 auto;
-  background: #fff;
-  border-radius: 15px;
-  padding: 2rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.about-text h2 {
-  margin-bottom: 1rem;
-  font-size: 2rem;
-  color: forestgreen;
-}
-
-.about-text p {
-  line-height: 1.6;
-  font-size: 1.1rem;
-}
-
-.about-image img {
-  width: 350px;
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
-}
-      #services {
-  padding: 3rem 1rem;
-}
-
-.services-container {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  max-width: 900px;
-  margin: 0 auto;
-  background: #fff;
-  border-radius: 15px;
-  padding: 2rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.services-text h2 {
-  margin-bottom: 1rem;
-  font-size: 2rem;
-  color: forestgreen;
-}
-
-.services-text p {
-  line-height: 1.6;
-  font-size: 1.1rem;
-}
-
-.services-image img {
-  width: 350px;
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
-}
-
-
-      h2,  {
-        text-align:left;
-        
-      }
-       .form-group {
-            margin-bottom: 1.25rem;
-        }
-        .form-row {
-            display: flex;
-            gap: 1rem;
-        }
-        .form-row .form-group {
-            flex: 1;
-        }
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            font-size: 0.9rem;
-        }
-        input, select, textarea {
-            width: 100%;
-            padding: 0.625rem;
-            border: 1px solid #d1d5db;
-            border-radius: 4px;
-            box-sizing: border-box;
-            font-size: 1rem;
-        }
-        input:focus, select:focus, textarea:focus {
-            outline: 2px solid var(--primary-color);
-            outline-offset: -1px;
-        }
-        button {
-            background-color: #F5EFD6 ;
-            color: forestgreen;
-            border: 2px solid forestgreen;
-            border-radius: 15px;
-            padding: 0.75rem 1.5rem;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 4px;
-            cursor: pointer;
-            width: 100%;
-            transition: background-color 0.2s;
-        }
-        button:hover {
-            background-color: white;
-        }
-          #booking {
-            background: #F5EFD6;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
-            width: 100%;
-            text-align:center;
-        }
     </style>
   </head>
   <body>
