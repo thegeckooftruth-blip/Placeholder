@@ -309,7 +309,406 @@
 <!-- SAFE PLACEHOLDER SCRIPT (NO EXECUTABLE JS) -->
 
   <script>
-    /* CLIENT PREVIEW SYSTEM Example: yoursite.com/?b=greenleaf Add new clients inside the "businesses" object below. */ const businesses = { greenleaf: { name: "GreenLeaf Lawn Care", tagline: "Professional Lawn Care, With Care.", aboutTitle: "About Us", about: "We provide reliable lawn care and property maintenance services with a focus on quality, consistency, and great customer service.", email: "hello@greenleaf.com", phone: "6305551234", aboutImage: "https://example.com/about-image.jpg", servicesImage: "https://example.com/services-image.jpg", servicesTitle: "Our Services", services: [ "Mowing", "Edging", "Hedge Trimming", "Weed Control", "Leaf Removal", "Storm Cleanup", "Gutter Cleaning", "Mulch Installation", "Small Tree and Bush Removal" ], headerButton: "Book Us Now", servicesCTA: "Interested? Request A Free Quote Now", bookingTitle: "Book a Service", bookingSubtitle: "Request a time that works for you — we'll confirm shortly.", bookingButton: "Request Service", contactTitle: "Contact Us", emailButton: "Email Us", phoneButton: "Call Or Text Now", colors: { primary: "#0B5E2E", background: "#F5EFD6", white: "#FFFFFF" } }, /* ADD MORE CLIENTS BELOW */ smithlawn: { name: "Smith Lawn & Landscaping", tagline: "Your Lawn. Our Care.", aboutTitle: "About Smith Lawn & Landscaping", about: "Locally owned lawn care and landscaping services designed to keep your property looking its best.", email: "smithlawn@example.com", phone: "6305555678", aboutImage: "https://example.com/smith-about.jpg", servicesImage: "https://example.com/smith-services.jpg", servicesTitle: "What We Offer", services: [ "Lawn Mowing", "Edging", "Spring Cleanup", "Fall Cleanup", "Hedge Trimming" ], headerButton: "Get a Free Quote", servicesCTA: "Request Your Free Quote", bookingTitle: "Request a Quote", bookingSubtitle: "Tell us what you need and we'll get back to you shortly.", bookingButton: "Request a Quote", contactTitle: "Get In Touch", emailButton: "Email Us", phoneButton: "Call Or Text", colors: { primary: "#145A32", background: "#F4F1DE", white: "#FFFFFF" } } }; // -------------------------------------------------- // GET CLIENT FROM URL // -------------------------------------------------- const params = new URLSearchParams(window.location.search); const businessId = params.get("b"); const business = businesses[businessId]; // -------------------------------------------------- // STOP IF NO CLIENT WAS FOUND // -------------------------------------------------- if (!business) { console.log( "No business selected. Use a URL such as ?b=greenleaf" ); } else { // -------------------------------------------------- // HELPER FUNCTIONS // -------------------------------------------------- function setText(id, value) { const element = document.getElementById(id); if (element && value !== undefined) { element.textContent = value; } } function setImage(id, src) { const element = document.getElementById(id); if (element && src) { element.src = src; } } // -------------------------------------------------- // PAGE TITLE // -------------------------------------------------- document.title = business.name; // -------------------------------------------------- // HEADER // -------------------------------------------------- setText("businessName", business.name); setText("tagline", business.tagline); setText("headerButton", business.headerButton); // -------------------------------------------------- // ABOUT SECTION // -------------------------------------------------- setText("aboutTitle", business.aboutTitle); setText("aboutText", business.about); setImage("aboutImage", business.aboutImage); // -------------------------------------------------- // SERVICES SECTION // -------------------------------------------------- setText("servicesTitle", business.servicesTitle); setText("servicesCTA", business.servicesCTA); setImage("servicesImage", business.servicesImage); // Create service list const servicesList = document.getElementById("servicesList"); if (servicesList && Array.isArray(business.services)) { servicesList.innerHTML = ""; business.services.forEach(function(service) { const li = document.createElement("li"); li.textContent = service; servicesList.appendChild(li); }); } // -------------------------------------------------- // BOOKING SECTION // -------------------------------------------------- setText("bookingTitle", business.bookingTitle); setText("bookingSubtitle", business.bookingSubtitle); setText("bookingButton", business.bookingButton); // -------------------------------------------------- // FOOTER // -------------------------------------------------- setText("footerTitle", business.contactTitle); setText("emailLink", business.emailButton); setText("phoneLink", business.phoneButton); // Email const emailLink = document.getElementById("emailLink"); if (emailLink && business.email) { emailLink.href = "mailto:" + business.email; } // Phone const phoneLink = document.getElementById("phoneLink"); if (phoneLink && business.phone) { const cleanPhone = business.phone.replace(/\D/g, ""); phoneLink.href = "tel:" + cleanPhone; } // -------------------------------------------------- // COLORS // -------------------------------------------------- if (business.colors) { const root = document.documentElement; if (business.colors.primary) { root.style.setProperty( "--business-primary", business.colors.primary ); } if (business.colors.background) { root.style.setProperty( "--business-background", business.colors.background ); } if (business.colors.white) { root.style.setProperty( "--business-white", business.colors.white ); } } // -------------------------------------------------- // APPLY COLORS TO THE PAGE // -------------------------------------------------- const style = document.createElement("style"); style.textContent = ` body { color: ${business.colors?.primary || "forestgreen"}; background-color: ${business.colors?.background || "#F5EFD6"}; } hr { border-color: ${business.colors?.primary || "forestgreen"}; } a { color: ${business.colors?.primary || "#0B5E2E"}; } .navbar { border-top-color: ${business.colors?.primary || "forestgreen"}; border-bottom-color: ${business.colors?.primary || "forestgreen"}; } .about-text h2, .services-text h2 { color: ${business.colors?.primary || "forestgreen"}; } button { color: ${business.colors?.primary || "forestgreen"}; border-color: ${business.colors?.primary || "forestgreen"}; background-color: ${business.colors?.background || "#F5EFD6"}; } input:focus, select:focus, textarea:focus { outline-color: ${business.colors?.primary || "forestgreen"}; } #booking { background-color: ${business.colors?.background || "#F5EFD6"}; } `; document.head.appendChild(style); // -------------------------------------------------- // PREVENT PAST BOOKING DATES // -------------------------------------------------- const dateInput = document.getElementById("date"); if (dateInput) { const today = new Date(); const year = today.getFullYear(); const month = String( today.getMonth() + 1 ).padStart(2, "0"); const day = String( today.getDate() ).padStart(2, "0"); dateInput.min = `${year}-${month}-${day}`; } // -------------------------------------------------- // AUTOMATICALLY UPDATE BOOKING SERVICE OPTIONS // -------------------------------------------------- const serviceSelect = document.getElementById("service"); if ( serviceSelect && Array.isArray(business.services) ) { serviceSelect.innerHTML = ""; const placeholder = document.createElement("option"); placeholder.value = ""; placeholder.textContent = "Choose an option"; placeholder.disabled = true; placeholder.selected = true; serviceSelect.appendChild(placeholder); business.services.forEach(function(service) { const option = document.createElement("option"); option.value = service .toLowerCase() .replace(/[^a-z0-9]+/g, "-") .replace(/^-|-$/g, ""); option.textContent = service; serviceSelect.appendChild(option); }); } } 
-    </script>
+   
+  /*
+    CLIENT PREVIEW SYSTEM
+
+    Example:
+    yoursite.com/?b=greenleaf
+
+    Add new clients inside the "businesses" object below.
+  */
+
+  const businesses = {
+
+    greenleaf: {
+      name: "GreenLeaf Lawn Care",
+      tagline: "Professional Lawn Care, With Care.",
+
+      aboutTitle: "About Us",
+      about:
+        "We provide reliable lawn care and property maintenance services with a focus on quality, consistency, and great customer service.",
+
+      email: "hello@greenleaf.com",
+      phone: "6305551234",
+
+      aboutImage:
+        "https://example.com/about-image.jpg",
+
+      servicesImage:
+        "https://example.com/services-image.jpg",
+
+      servicesTitle: "Our Services",
+
+      services: [
+        "Mowing",
+        "Edging",
+        "Hedge Trimming",
+        "Weed Control",
+        "Leaf Removal",
+        "Storm Cleanup",
+        "Gutter Cleaning",
+        "Mulch Installation",
+        "Small Tree and Bush Removal"
+      ],
+
+      headerButton: "Book Us Now",
+      servicesCTA: "Interested? Request A Free Quote Now",
+
+      bookingTitle: "Book a Service",
+      bookingSubtitle:
+        "Request a time that works for you — we'll confirm shortly.",
+
+      bookingButton: "Request Service",
+
+      contactTitle: "Contact Us",
+      emailButton: "Email Us",
+      phoneButton: "Call Or Text Now",
+
+      colors: {
+        primary: "#0B5E2E",
+        background: "#F5EFD6",
+        white: "#FFFFFF"
+      }
+    },
+newclient: {
+  name: "Joe's Landscaping",
+  tagline: "Quality Landscaping You Can Count On.",
+
+  aboutTitle: "About Us",
+  about: "Joe's Landscaping provides reliable lawn care...",
+
+  email: "joe@example.com",
+  phone: "6305551234",
+
+  aboutImage: "IMAGE_URL",
+  servicesImage: "IMAGE_URL",
+
+  servicesTitle: "Our Services",
+
+  services: [
+    "Mowing",
+    "Edging",
+    "Mulching",
+    "Spring Cleanup"
+  ],
+
+  headerButton: "Get a Free Quote",
+  servicesCTA: "Request Your Free Quote",
+
+  bookingTitle: "Request a Quote",
+  bookingSubtitle: "Tell us what you need and we'll get back to you.",
+  bookingButton: "Request Quote",
+
+  contactTitle: "Contact Us",
+  emailButton: "Email Us",
+  phoneButton: "Call Or Text",
+
+  colors: {
+    primary: "#1B5E20",
+    background: "#F5EFD6",
+    white: "#FFFFFF"
+  }
+}
+  };
+
+
+  // --------------------------------------------------
+  // GET CLIENT FROM URL
+  // --------------------------------------------------
+
+  const params = new URLSearchParams(window.location.search);
+
+  const businessId = params.get("b");
+
+  const business = businesses[businessId];
+
+
+  // --------------------------------------------------
+  // STOP IF NO CLIENT WAS FOUND
+  // --------------------------------------------------
+
+  if (!business) {
+
+    console.log(
+      "No business selected. Use a URL such as ?b=greenleaf"
+    );
+
+  } else {
+
+
+    // --------------------------------------------------
+    // HELPER FUNCTIONS
+    // --------------------------------------------------
+
+    function setText(id, value) {
+      const element = document.getElementById(id);
+
+      if (element && value !== undefined) {
+        element.textContent = value;
+      }
+    }
+
+
+    function setImage(id, src) {
+      const element = document.getElementById(id);
+
+      if (element && src) {
+        element.src = src;
+      }
+    }
+
+
+    // --------------------------------------------------
+    // PAGE TITLE
+    // --------------------------------------------------
+
+    document.title = business.name;
+
+
+    // --------------------------------------------------
+    // HEADER
+    // --------------------------------------------------
+
+    setText("businessName", business.name);
+    setText("tagline", business.tagline);
+    setText("headerButton", business.headerButton);
+
+
+    // --------------------------------------------------
+    // ABOUT SECTION
+    // --------------------------------------------------
+
+    setText("aboutTitle", business.aboutTitle);
+    setText("aboutText", business.about);
+
+    setImage("aboutImage", business.aboutImage);
+
+
+    // --------------------------------------------------
+    // SERVICES SECTION
+    // --------------------------------------------------
+
+    setText("servicesTitle", business.servicesTitle);
+    setText("servicesCTA", business.servicesCTA);
+
+    setImage("servicesImage", business.servicesImage);
+
+
+    // Create service list
+    const servicesList = document.getElementById("servicesList");
+
+    if (servicesList && Array.isArray(business.services)) {
+
+      servicesList.innerHTML = "";
+
+      business.services.forEach(function(service) {
+
+        const li = document.createElement("li");
+
+        li.textContent = service;
+
+        servicesList.appendChild(li);
+
+      });
+
+    }
+
+
+    // --------------------------------------------------
+    // BOOKING SECTION
+    // --------------------------------------------------
+
+    setText("bookingTitle", business.bookingTitle);
+    setText("bookingSubtitle", business.bookingSubtitle);
+    setText("bookingButton", business.bookingButton);
+
+
+    // --------------------------------------------------
+    // FOOTER
+    // --------------------------------------------------
+
+    setText("footerTitle", business.contactTitle);
+    setText("emailLink", business.emailButton);
+    setText("phoneLink", business.phoneButton);
+
+
+    // Email
+    const emailLink = document.getElementById("emailLink");
+
+    if (emailLink && business.email) {
+
+      emailLink.href = "mailto:" + business.email;
+
+    }
+
+
+    // Phone
+    const phoneLink = document.getElementById("phoneLink");
+
+    if (phoneLink && business.phone) {
+
+      const cleanPhone = business.phone.replace(/\D/g, "");
+
+      phoneLink.href = "tel:" + cleanPhone;
+
+    }
+
+
+    // --------------------------------------------------
+    // COLORS
+    // --------------------------------------------------
+
+    if (business.colors) {
+
+      const root = document.documentElement;
+
+      if (business.colors.primary) {
+        root.style.setProperty(
+          "--business-primary",
+          business.colors.primary
+        );
+      }
+
+      if (business.colors.background) {
+        root.style.setProperty(
+          "--business-background",
+          business.colors.background
+        );
+      }
+
+      if (business.colors.white) {
+        root.style.setProperty(
+          "--business-white",
+          business.colors.white
+        );
+      }
+
+    }
+
+
+    // --------------------------------------------------
+    // APPLY COLORS TO THE PAGE
+    // --------------------------------------------------
+
+    const style = document.createElement("style");
+
+    style.textContent = `
+      body {
+        color: ${business.colors?.primary || "forestgreen"};
+        background-color: ${business.colors?.background || "#F5EFD6"};
+      }
+
+      hr {
+        border-color: ${business.colors?.primary || "forestgreen"};
+      }
+
+      a {
+        color: ${business.colors?.primary || "#0B5E2E"};
+      }
+
+      .navbar {
+        border-top-color: ${business.colors?.primary || "forestgreen"};
+        border-bottom-color: ${business.colors?.primary || "forestgreen"};
+      }
+
+      .about-text h2,
+      .services-text h2 {
+        color: ${business.colors?.primary || "forestgreen"};
+      }
+
+      button {
+        color: ${business.colors?.primary || "forestgreen"};
+        border-color: ${business.colors?.primary || "forestgreen"};
+        background-color: ${business.colors?.background || "#F5EFD6"};
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline-color: ${business.colors?.primary || "forestgreen"};
+      }
+
+      #booking {
+        background-color: ${business.colors?.background || "#F5EFD6"};
+      }
+    `;
+
+    document.head.appendChild(style);
+
+
+    // --------------------------------------------------
+    // PREVENT PAST BOOKING DATES
+    // --------------------------------------------------
+
+    const dateInput = document.getElementById("date");
+
+    if (dateInput) {
+
+      const today = new Date();
+
+      const year = today.getFullYear();
+
+      const month = String(
+        today.getMonth() + 1
+      ).padStart(2, "0");
+
+      const day = String(
+        today.getDate()
+      ).padStart(2, "0");
+
+      dateInput.min =
+        `${year}-${month}-${day}`;
+
+    }
+
+
+    // --------------------------------------------------
+    // AUTOMATICALLY UPDATE BOOKING SERVICE OPTIONS
+    // --------------------------------------------------
+
+    const serviceSelect =
+      document.getElementById("service");
+
+    if (
+      serviceSelect &&
+      Array.isArray(business.services)
+    ) {
+
+      serviceSelect.innerHTML = "";
+
+      const placeholder =
+        document.createElement("option");
+
+      placeholder.value = "";
+      placeholder.textContent =
+        "Choose an option";
+
+      placeholder.disabled = true;
+      placeholder.selected = true;
+
+      serviceSelect.appendChild(placeholder);
+
+
+      business.services.forEach(function(service) {
+
+        const option =
+          document.createElement("option");
+
+        option.value = service
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/^-|-$/g, "");
+
+        option.textContent = service;
+
+        serviceSelect.appendChild(option);
+
+      });
+
+    }
+
+  }
+</script>
 </body>
 </html>
