@@ -5,47 +5,168 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title id="pageTitle">Freelance Template</title>
 
-  <style>
+  <style id="styleRoot">
     img { max-width: 100%; height: auto; object-fit: cover; }
-    body { color: forestgreen; background-color: #F5EFD6; }
+
+    body { 
+      color: forestgreen; 
+      background-color: #F5EFD6; 
+    }
+
     footer { text-align: center; }
     hr { border: 2px solid forestgreen; }
+
     h1, header { text-align: center; }
     h1 { font-size: 45px; }
+
     header, footer p { font-size: 28px; }
     header, footer a { font-size: 23px; }
-    a { color: #0B5E2E; text-decoration: none; }
+
+    a { 
+      color: #0B5E2E; 
+      text-decoration: none; 
+    }
+
     a:hover { color: forestgreen; }
 
-    .navbar { background-color: white; padding: 20px 0; border-top: 3px solid forestgreen; border-bottom: 3px solid forestgreen; margin-top: 25px; margin-bottom: 25px; }
-    .nav-links { display: flex; justify-content: center; gap: 3rem; }
-    .nav-links a { font-size: 1.6rem; color: #0B5E2E; text-decoration: none; padding-bottom: 6px; transition: color 0.2s ease, border-bottom 0.2s ease; }
-    .nav-links a:hover { color: forestgreen; border-bottom: 2px solid forestgreen; }
+    .navbar { 
+      background-color: white; 
+      padding: 20px 0; 
+      border-top: 3px solid forestgreen; 
+      border-bottom: 3px solid forestgreen; 
+      margin-top: 25px; 
+      margin-bottom: 25px; 
+    }
+
+    .nav-links { 
+      display: flex; 
+      justify-content: center; 
+      gap: 3rem; 
+    }
+
+    .nav-links a { 
+      font-size: 1.6rem; 
+      color: #0B5E2E; 
+      text-decoration: none; 
+      padding-bottom: 6px; 
+      transition: color 0.2s ease, border-bottom 0.2s ease; 
+    }
+
+    .nav-links a:hover { 
+      color: forestgreen; 
+      border-bottom: 2px solid forestgreen; 
+    }
 
     #about { padding: 3rem 1rem; }
-    .about-container { display: flex; align-items: center; gap: 2rem; max-width: 900px; margin: 0 auto; background: #fff; border-radius: 15px; padding: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-    .about-text h2 { margin-bottom: 1rem; font-size: 2rem; color: forestgreen; }
-    .about-text p { line-height: 1.6; font-size: 1.1rem; }
-    .about-image img { width: 350px; height: auto; border-radius: 12px; object-fit: cover; }
+
+    .about-container { 
+      display: flex; 
+      align-items: center; 
+      gap: 2rem; 
+      max-width: 900px; 
+      margin: 0 auto; 
+      background: #fff; 
+      border-radius: 15px; 
+      padding: 2rem; 
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+    }
+
+    .about-text h2 { 
+      margin-bottom: 1rem; 
+      font-size: 2rem; 
+      color: forestgreen; 
+    }
+
+    .about-text p { 
+      line-height: 1.6; 
+      font-size: 1.1rem; 
+    }
+
+    .about-image img { 
+      width: 350px; 
+      height: auto; 
+      border-radius: 12px; 
+      object-fit: cover; 
+    }
 
     #services { padding: 3rem 1rem; }
-    .services-container { display: flex; align-items: center; gap: 2rem; max-width: 900px; margin: 0 auto; background: #fff; border-radius: 15px; padding: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-    .services-text h2 { margin-bottom: 1rem; font-size: 2rem; color: forestgreen; }
-    .services-image img { width: 350px; height: auto; border-radius: 12px; object-fit: cover; }
+
+    .services-container { 
+      display: flex; 
+      align-items: center; 
+      gap: 2rem; 
+      max-width: 900px; 
+      margin: 0 auto; 
+      background: #fff; 
+      border-radius: 15px; 
+      padding: 2rem; 
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+    }
+
+    .services-text h2 { 
+      margin-bottom: 1rem; 
+      font-size: 2rem; 
+      color: forestgreen; 
+    }
+
+    .services-image img { 
+      width: 350px; 
+      height: auto; 
+      border-radius: 12px; 
+      object-fit: cover; 
+    }
 
     h2 { text-align: left; }
 
     .form-group { margin-bottom: 1.25rem; }
     .form-row { display: flex; gap: 1rem; }
     .form-row .form-group { flex: 1; }
-    label { display: block; margin-bottom: 0.5rem; font-weight: 500; font-size: 0.9rem; }
-    input, select, textarea { width: 100%; padding: 0.625rem; border: 1px solid #d1d5db; border-radius: 4px; box-sizing: border-box; font-size: 1rem; }
-    input:focus, select:focus, textarea:focus { outline: 2px solid forestgreen; outline-offset: -1px; }
 
-    button { background-color: #F5EFD6; color: forestgreen; border: 2px solid forestgreen; border-radius: 15px; padding: 0.75rem 1.5rem; font-size: 1rem; font-weight: 600; cursor: pointer; width: 100%; transition: background-color 0.2s; }
+    label { 
+      display: block; 
+      margin-bottom: 0.5rem; 
+      font-weight: 500; 
+      font-size: 0.9rem; 
+    }
+
+    input, select, textarea { 
+      width: 100%; 
+      padding: 0.625rem; 
+      border: 1px solid #d1d5db; 
+      border-radius: 4px; 
+      box-sizing: border-box; 
+      font-size: 1rem; 
+    }
+
+    input:focus, select:focus, textarea:focus { 
+      outline: 2px solid forestgreen; 
+      outline-offset: -1px; 
+    }
+
+    button { 
+      background-color: #F5EFD6; 
+      color: forestgreen; 
+      border: 2px solid forestgreen; 
+      border-radius: 15px; 
+      padding: 0.75rem 1.5rem; 
+      font-size: 1rem; 
+      font-weight: 600; 
+      cursor: pointer; 
+      width: 100%; 
+      transition: background-color 0.2s; 
+    }
+
     button:hover { background-color: white; }
 
-    #booking { background: #F5EFD6; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); max-width: 500px; width: 100%; margin: 0 auto; }
+    #booking { 
+      background: #F5EFD6; 
+      padding: 2rem; 
+      border-radius: 8px; 
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); 
+      max-width: 500px; 
+      width: 100%; 
+      margin: 0 auto; 
+    }
 
     @media (max-width: 768px) {
       .nav-links { gap: 1.5rem; flex-wrap: wrap; }
@@ -56,48 +177,49 @@
   </style>
 </head>
 
-<body>
+<body id="bodyRoot">
 
-<header>
+<header id="headerRoot">
   <section class="header">
     <h1 id="businessName">Lawn Care</h1>
     <p id="tagline">Providing Lawn Care, With Care.</p>
-    <a href="#booking">Book Us Now</a>
+    <a id="headerButton" href="#booking">Book Us Now</a>
   </section>
 </header>
 
-<div class="navbar">
+<div class="navbar" id="navbarRoot">
   <nav class="nav-links">
-    <a href="#about">About Us</a>
-    <a href="#services">Services We Offer</a>
-    <a href="#contact">Contact Us Now</a>
+    <a id="navAbout" href="#about">About Us</a>
+    <a id="navServices" href="#services">Services We Offer</a>
+    <a id="navContact" href="#contact">Contact Us Now</a>
   </nav>
 </div>
 
 <section id="about">
-  <div class="about-container">
+  <div class="about-container" id="aboutContainer">
     <div class="about-text">
-      <h2>About Us</h2>
+      <h2 id="aboutTitle">About Us</h2>
       <p id="aboutText">
         We started just over a year ago with one mission: to make every lawn in our area look the best it can be.
       </p>
     </div>
 
     <div class="about-image">
-      <img src="https://salisburygreenhouse.com/wp-content/uploads/Header-_0161_Spring-Yard-Clean-Up-feature-768x810.jpg">
+      <img id="aboutImage" src="https://salisburygreenhouse.com/wp-content/uploads/Header-_0161_Spring-Yard-Clean-Up-feature-768x810.jpg">
     </div>
   </div>
 </section>
 
 <section id="services">
-  <div class="services-container">
+  <div class="services-container" id="servicesContainer">
     <div class="services-image">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdmxvP_47INKucnfoVcAae6JeKnpe5_AWKpWLLgFO-Sw&s=10">
+      <img id="servicesImage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdmxvP_47INKucnfoVcAae6JeKnpe5_AWKpWLLgFO-Sw&s=10">
     </div>
 
     <div class="services-text">
       <h2 id="servicesTitle">We Offer</h2>
-      <ul>
+
+      <ul id="servicesList">
         <li>Mowing</li>
         <li>Edging</li>
         <li>Hedge Trimming</li>
@@ -108,37 +230,39 @@
         <li>Mulch Installation</li>
         <li>Small Tree and Bush Removal</li>
       </ul>
-      <a href="#booking" class="services-cta">Interested? Request A Free Quote Now</a>
+
+      <a id="servicesCTA" href="#booking" class="services-cta">
+        Interested? Request A Free Quote Now
+      </a>
     </div>
   </div>
 </section>
 
 <section id="booking">
-  <div class="booking-container">
-    <h2 class="booking-title">Book a Service</h2>
-    <p class="booking-subtitle">Request a time that works for you — we’ll confirm shortly.</p>
+  <div class="booking-container" id="bookingContainer">
+    <h2 class="booking-title" id="bookingTitle">Book a Service</h2>
+    <p class="booking-subtitle" id="bookingSubtitle">Request a time that works for you — we’ll confirm shortly.</p>
 
     <form action="/submit-booking" method="POST">
       <div class="form-group">
-        <label for="full-name">Full Name</label>
+        <label id="labelFullName" for="full-name">Full Name</label>
         <input type="text" id="full-name" name="fullName" required>
       </div>
 
       <div class="form-row">
         <div class="form-group">
-          <label for="email">Email Address</label>
+          <label id="labelEmail" for="email">Email Address</label>
           <input type="email" id="email" name="email" required>
         </div>
 
-
         <div class="form-group">
-          <label for="phone">Phone Number</label>
+          <label id="labelPhone" for="phone">Phone Number</label>
           <input type="tel" id="phone" name="phone" required>
         </div>
       </div>
 
       <div class="form-group">
-        <label for="service">Select Service</label>
+        <label id="labelService" for="service">Select Service</label>
         <select id="service" name="service" required>
           <option value="" disabled selected>Choose an option</option>
           <option value="mowing">Mowing</option>
@@ -155,102 +279,37 @@
 
       <div class="form-row">
         <div class="form-group">
-          <label for="date">Preferred Date</label>
+          <label id="labelDate" for="date">Preferred Date</label>
           <input type="date" id="date" name="date" required>
         </div>
 
         <div class="form-group">
-          <label for="time">Preferred Time</label>
+          <label id="labelTime" for="time">Preferred Time</label>
           <input type="time" id="time" name="time" required>
         </div>
       </div>
 
       <div class="form-group">
-        <label for="notes">Special Notes / Requests</label>
+        <label id="labelNotes" for="notes">Special Notes / Requests</label>
         <textarea id="notes" name="notes" rows="4"></textarea>
       </div>
 
-      <button type="submit">Confirm Booking</button>
+      <button id="bookingButton" type="submit">Confirm Booking</button>
     </form>
   </div>
 </section>
 
 <footer id="contact">
-  <hr>
-  <p>Contact Us</p>
+  <hr id="footerLineTop">
+  <p id="footerTitle">Contact Us</p>
   <a id="emailLink" href="mailto:">Email Us</a><br>
   <a id="phoneLink" href="tel:">Call Or Text Now</a>
-  <hr>
+  <hr id="footerLineBottom">
 </footer>
-
 <!-- SAFE PLACEHOLDER SCRIPT (NO EXECUTABLE JS) -->
-<script>
-  // Example:
-  // yoursite.com/?biz=GreenLeaf&tagline=Professional%20Lawn%20Care&email=hello@greenleaf.com&phone=6305551234
 
-  const params = new URLSearchParams(window.location.search);
-
-  // Helper: only update an element when a value was provided
-  function updateElement(id, value) {
-    const element = document.getElementById(id);
-
-    if (element && value) {
-      element.textContent = value;
-    }
-  }
-
-  // Business information
-  const businessName = params.get("biz");
-  const tagline = params.get("tagline");
-  const about = params.get("about");
-  const email = params.get("email");
-  const phone = params.get("phone");
-
-  // Update visible text
-  updateElement("businessName", businessName);
-  updateElement("pageTitle", businessName ? `${businessName} | Lawn Care` : null);
-  updateElement("tagline", tagline);
-  updateElement("aboutText", about);
-
-  // Update contact links
-  const emailLink = document.getElementById("emailLink");
-  if (emailLink && email) {
-    emailLink.href = `mailto:${email}`;
-    emailLink.textContent = `Email Us`;
-  }
-
-  const phoneLink = document.getElementById("phoneLink");
-  if (phone) {
-    phoneLink.href = `tel:${phone.replace(/\D/g, "")}`;
-    phoneLink.textContent = "Call Or Text Now";
-  }
-
-  // Optional: automatically change the booking service
-  const service = params.get("service");
-  const serviceSelect = document.getElementById("service");
-
-  if (service && serviceSelect) {
-    const option = [...serviceSelect.options].find(
-      option =>
-        option.value.toLowerCase() === service.toLowerCase()
-    );
-
-    if (option) {
-      serviceSelect.value = option.value;
-    }
-  }
-
-  // Prevent customers from selecting a date in the past
-  const dateInput = document.getElementById("date");
-
-  if (dateInput) {
-    const today = new Date();
-    const year = today.getFullYear();
-    const month = String(today.getMonth() + 1).padStart(2, "0");
-    const day = String(today.getDate()).padStart(2, "0");
-
-    dateInput.min = `${year}-${month}-${day}`;
-  }
-</script>
+  <script>
+    /* CLIENT PREVIEW SYSTEM Example: yoursite.com/?b=greenleaf Add new clients inside the "businesses" object below. */ const businesses = { greenleaf: { name: "GreenLeaf Lawn Care", tagline: "Professional Lawn Care, With Care.", aboutTitle: "About Us", about: "We provide reliable lawn care and property maintenance services with a focus on quality, consistency, and great customer service.", email: "hello@greenleaf.com", phone: "6305551234", aboutImage: "https://example.com/about-image.jpg", servicesImage: "https://example.com/services-image.jpg", servicesTitle: "Our Services", services: [ "Mowing", "Edging", "Hedge Trimming", "Weed Control", "Leaf Removal", "Storm Cleanup", "Gutter Cleaning", "Mulch Installation", "Small Tree and Bush Removal" ], headerButton: "Book Us Now", servicesCTA: "Interested? Request A Free Quote Now", bookingTitle: "Book a Service", bookingSubtitle: "Request a time that works for you — we'll confirm shortly.", bookingButton: "Request Service", contactTitle: "Contact Us", emailButton: "Email Us", phoneButton: "Call Or Text Now", colors: { primary: "#0B5E2E", background: "#F5EFD6", white: "#FFFFFF" } }, /* ADD MORE CLIENTS BELOW */ smithlawn: { name: "Smith Lawn & Landscaping", tagline: "Your Lawn. Our Care.", aboutTitle: "About Smith Lawn & Landscaping", about: "Locally owned lawn care and landscaping services designed to keep your property looking its best.", email: "smithlawn@example.com", phone: "6305555678", aboutImage: "https://example.com/smith-about.jpg", servicesImage: "https://example.com/smith-services.jpg", servicesTitle: "What We Offer", services: [ "Lawn Mowing", "Edging", "Spring Cleanup", "Fall Cleanup", "Hedge Trimming" ], headerButton: "Get a Free Quote", servicesCTA: "Request Your Free Quote", bookingTitle: "Request a Quote", bookingSubtitle: "Tell us what you need and we'll get back to you shortly.", bookingButton: "Request a Quote", contactTitle: "Get In Touch", emailButton: "Email Us", phoneButton: "Call Or Text", colors: { primary: "#145A32", background: "#F4F1DE", white: "#FFFFFF" } } }; // -------------------------------------------------- // GET CLIENT FROM URL // -------------------------------------------------- const params = new URLSearchParams(window.location.search); const businessId = params.get("b"); const business = businesses[businessId]; // -------------------------------------------------- // STOP IF NO CLIENT WAS FOUND // -------------------------------------------------- if (!business) { console.log( "No business selected. Use a URL such as ?b=greenleaf" ); } else { // -------------------------------------------------- // HELPER FUNCTIONS // -------------------------------------------------- function setText(id, value) { const element = document.getElementById(id); if (element && value !== undefined) { element.textContent = value; } } function setImage(id, src) { const element = document.getElementById(id); if (element && src) { element.src = src; } } // -------------------------------------------------- // PAGE TITLE // -------------------------------------------------- document.title = business.name; // -------------------------------------------------- // HEADER // -------------------------------------------------- setText("businessName", business.name); setText("tagline", business.tagline); setText("headerButton", business.headerButton); // -------------------------------------------------- // ABOUT SECTION // -------------------------------------------------- setText("aboutTitle", business.aboutTitle); setText("aboutText", business.about); setImage("aboutImage", business.aboutImage); // -------------------------------------------------- // SERVICES SECTION // -------------------------------------------------- setText("servicesTitle", business.servicesTitle); setText("servicesCTA", business.servicesCTA); setImage("servicesImage", business.servicesImage); // Create service list const servicesList = document.getElementById("servicesList"); if (servicesList && Array.isArray(business.services)) { servicesList.innerHTML = ""; business.services.forEach(function(service) { const li = document.createElement("li"); li.textContent = service; servicesList.appendChild(li); }); } // -------------------------------------------------- // BOOKING SECTION // -------------------------------------------------- setText("bookingTitle", business.bookingTitle); setText("bookingSubtitle", business.bookingSubtitle); setText("bookingButton", business.bookingButton); // -------------------------------------------------- // FOOTER // -------------------------------------------------- setText("footerTitle", business.contactTitle); setText("emailLink", business.emailButton); setText("phoneLink", business.phoneButton); // Email const emailLink = document.getElementById("emailLink"); if (emailLink && business.email) { emailLink.href = "mailto:" + business.email; } // Phone const phoneLink = document.getElementById("phoneLink"); if (phoneLink && business.phone) { const cleanPhone = business.phone.replace(/\D/g, ""); phoneLink.href = "tel:" + cleanPhone; } // -------------------------------------------------- // COLORS // -------------------------------------------------- if (business.colors) { const root = document.documentElement; if (business.colors.primary) { root.style.setProperty( "--business-primary", business.colors.primary ); } if (business.colors.background) { root.style.setProperty( "--business-background", business.colors.background ); } if (business.colors.white) { root.style.setProperty( "--business-white", business.colors.white ); } } // -------------------------------------------------- // APPLY COLORS TO THE PAGE // -------------------------------------------------- const style = document.createElement("style"); style.textContent = ` body { color: ${business.colors?.primary || "forestgreen"}; background-color: ${business.colors?.background || "#F5EFD6"}; } hr { border-color: ${business.colors?.primary || "forestgreen"}; } a { color: ${business.colors?.primary || "#0B5E2E"}; } .navbar { border-top-color: ${business.colors?.primary || "forestgreen"}; border-bottom-color: ${business.colors?.primary || "forestgreen"}; } .about-text h2, .services-text h2 { color: ${business.colors?.primary || "forestgreen"}; } button { color: ${business.colors?.primary || "forestgreen"}; border-color: ${business.colors?.primary || "forestgreen"}; background-color: ${business.colors?.background || "#F5EFD6"}; } input:focus, select:focus, textarea:focus { outline-color: ${business.colors?.primary || "forestgreen"}; } #booking { background-color: ${business.colors?.background || "#F5EFD6"}; } `; document.head.appendChild(style); // -------------------------------------------------- // PREVENT PAST BOOKING DATES // -------------------------------------------------- const dateInput = document.getElementById("date"); if (dateInput) { const today = new Date(); const year = today.getFullYear(); const month = String( today.getMonth() + 1 ).padStart(2, "0"); const day = String( today.getDate() ).padStart(2, "0"); dateInput.min = `${year}-${month}-${day}`; } // -------------------------------------------------- // AUTOMATICALLY UPDATE BOOKING SERVICE OPTIONS // -------------------------------------------------- const serviceSelect = document.getElementById("service"); if ( serviceSelect && Array.isArray(business.services) ) { serviceSelect.innerHTML = ""; const placeholder = document.createElement("option"); placeholder.value = ""; placeholder.textContent = "Choose an option"; placeholder.disabled = true; placeholder.selected = true; serviceSelect.appendChild(placeholder); business.services.forEach(function(service) { const option = document.createElement("option"); option.value = service .toLowerCase() .replace(/[^a-z0-9]+/g, "-") .replace(/^-|-$/g, ""); option.textContent = service; serviceSelect.appendChild(option); }); } } 
+    </script>
 </body>
 </html>
