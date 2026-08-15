@@ -1,743 +1,2751 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="pageTitle">Freelance Template</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://gstatic.com" crossorigin>
-<link href="https://googleapis.com" rel="stylesheet">
-  <style id="styleRoot">
-  /* 1. Global Reset & Modern Baseline */
-    header button, .navbar + button, h1 ~ button {
-  max-width: 280px;
-  margin: 1.5rem auto 0 auto;
-  display: block;
-}
-#headerButton {
-  text-align:center;
-}
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  body { 
-    color: #334155; 
-    background-color: #F8FAFC; 
-    font-family: 'Inter', 'Montserrat', sans-serif; 
-    line-height: 1.6;
-    padding: 0 1rem;
-  }
 
-  img { 
-    max-width: 100%; 
-    height: auto; 
-    object-fit: cover; 
-    display: block;
-  }
+  <meta
+    name="description"
+    id="metaDescription"
+    content="Professional lawn care and landscaping services."
+  >
 
-  /* 2. Typography & Headers */
-  h1, h2, h3 {
-    color: #166534; /* Rich, professional dark green */
-    font-weight: 700;
-  }
+  <meta name="theme-color" content="#176B3A">
 
-  h1 { 
-    font-size: 2.75rem; 
-    text-align: center;
-    margin-top: 3rem;
-    margin-bottom: 0.5rem;
-  }
+  <title id="pageTitle">Professional Lawn Care</title>
 
-  header p {
-    text-align: center;
-    font-size: 1.25rem;
-    color: #475569;
-    margin-bottom: 2rem;
-  }
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  >
 
-  /* 3. Sleek Navigation Bar */
-  .navbar { 
-    background-color: white; 
-    padding: 1.25rem 0; 
-    border-radius: 12px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-    max-width: 900px;
-    margin: 0 auto 3rem auto;
-  }
+  <style>
+    /* =========================================================
+       DESIGN SYSTEM
+    ========================================================= */
 
-  .nav-links { 
-    display: flex; 
-    justify-content: center; 
-    gap: 2.5rem; 
-  }
+    :root {
+      --primary: #176B3A;
+      --primary-dark: #0F4D29;
+      --primary-light: #EAF6EE;
 
-  .nav-links a { 
-    font-size: 1.05rem; 
-    color: #166534; 
-    text-decoration: none; 
-    font-weight: 500;
-    padding-bottom: 4px; 
-    transition: all 0.2s ease; 
-    border-bottom: 2px solid transparent;
-  }
+      --accent: #C99A3E;
+      --accent-light: #FBF4E5;
 
-  .nav-links a:hover { 
-    color: #15803d; 
-    border-bottom: 2px solid #15803d; 
-  }
+      --background: #F6F8F5;
+      --surface: #FFFFFF;
+      --surface-soft: #F0F4F0;
 
-  /* 4. Content Containers (About & Services) */
-  #about, #services { 
-    padding: 2rem 0; 
-  }
+      --text: #17221B;
+      --text-soft: #526158;
+      --text-muted: #748078;
 
-  .about-container, .services-container { 
-    display: flex; 
-    align-items: center; 
-    gap: 3rem; 
-    max-width: 900px; 
-    margin: 0 auto; 
-    background: #ffffff; 
-    border-radius: 16px; 
-    padding: 2.5rem; 
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03); 
-  }
+      --border: #DDE5DF;
 
-  .about-text, .services-text {
-    flex: 1;
-  }
+      --success: #176B3A;
+      --danger: #B42318;
 
-  .about-text h2, .services-text h2 { 
-    margin-bottom: 1rem; 
-    font-size: 2rem; 
-  }
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --radius-xl: 30px;
 
-  .about-text p, .services-text p { 
-    font-size: 1.05rem; 
-    color: #475569;
-  }
+      --shadow-sm:
+        0 2px 8px rgba(15, 45, 28, 0.06);
 
-  .about-image, .services-image {
-    flex: 1;
-  }
+      --shadow-md:
+        0 12px 35px rgba(15, 45, 28, 0.09);
 
-  .about-image img, .services-image img { 
-    width: 100%; 
-    height: 280px; 
-    border-radius: 12px; 
-  }
+      --shadow-lg:
+        0 24px 60px rgba(15, 45, 28, 0.13);
 
-  /* 5. Modern Quote Form Widget */
-  #booking { 
-    background: #ffffff; 
-    padding: 2.5rem; 
-    border-radius: 16px; 
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05); 
-    max-width: 550px; 
-    width: 100%; 
-    margin: 4rem auto; 
-  }
+      --container: 1120px;
 
-  #booking h2 {
-    font-size: 1.75rem;
-    margin-bottom: 0.5rem;
-    text-align: center;
-  }
-
-  #booking p {
-    text-align: center;
-    margin-bottom: 2rem;
-    color: #64748b;
-    font-size: 0.95rem;
-  }
-
-  .form-group { 
-    margin-bottom: 1.5rem; 
-  }
-  
-  .form-row { 
-    display: flex; 
-    gap: 1.25rem; 
-  }
-  
-  .form-row .form-group { 
-    flex: 1; 
-  }
-
-  label { 
-    display: block; 
-    margin-bottom: 0.5rem; 
-    font-weight: 600; 
-    font-size: 0.875rem; 
-    color: #334155;
-  }
-
-  input, select, textarea { 
-    width: 100%; 
-    padding: 0.75rem; 
-    border: 1px solid #cbd5e1; 
-    border-radius: 8px; 
-    background-color: #f8fafc;
-    font-size: 1rem; 
-    color: #1e293b;
-    transition: all 0.2s;
-  }
-
-  input:focus, select:focus, textarea:focus { 
-    outline: none;
-    border-color: #166534;
-    background-color: #ffffff;
-    box-shadow: 0 0 0 4px rgba(22, 101, 52, 0.15);
-  }
-
-  /* 6. High-Converting CTA Button */
-  button { 
-    background-color: #166534; 
-    color: #ffffff; 
-    border: none; 
-    border-radius: 8px; 
-    padding: 0.875rem 1.5rem; 
-    font-size: 1.05rem; 
-    font-weight: 600; 
-    cursor: pointer; 
-    width: 100%; 
-    transition: background-color 0.2s, transform 0.1s; 
-    margin-top: 0.5rem;
-  }
-
-  button:hover { 
-    background-color: #15803d; 
-  }
-  
-  button:active {
-    transform: scale(0.98);
-  }
-
-  /* 7. Clean Footer Asset */
-  footer { 
-    text-align: center; 
-    padding: 3rem 0;
-    margin-top: 4rem;
-    border-top: 1px solid #e2e8f0;
-    color: #64748b;
-    font-size: 0.95rem;
-  }
-
-  /* 8. Fully Responsive Breakpoints */
-  @media (max-width: 768px) {
-    h1 { font-size: 2.25rem; }
-    .navbar { margin: 1rem auto; padding: 1rem; }
-    .nav-links { gap: 1.25rem; flex-wrap: wrap; }
-    
-    .about-container, .services-container { 
-      flex-direction: column; 
-      padding: 1.5rem; 
-      gap: 1.5rem;
+      --transition: 180ms ease;
     }
-    
-    .about-image, .services-image {
+
+
+    /* =========================================================
+       RESET
+    ========================================================= */
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      min-height: 100vh;
+      color: var(--text);
+      background: var(--background);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img {
+      display: block;
       width: 100%;
-      order: -1; /* Pushes images above text on mobile devices */
+      max-width: 100%;
+      height: auto;
     }
-    
-    .about-image img, .services-image img { 
-      height: 220px; 
+
+    a {
+      color: inherit;
     }
-    
-    .form-row { 
-      flex-direction: column; 
-      gap: 0; 
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
     }
-  }
-</style>
-</head>
 
-<body id="bodyRoot">
+    button {
+      border: 0;
+    }
 
-<header id="headerRoot">
-  <section class="header">
-    <h1 id="businessName">Lawn Care</h1>
-    <p id="tagline">Providing Lawn Care, With Care.</p>
-    <a id="headerButton" href="#booking">Book Us Now</a>
-  </section>
-</header>
+    ul {
+      list-style: none;
+    }
 
-<div class="navbar" id="navbarRoot">
-  <nav class="nav-links">
-    <a id="navAbout" href="#about">About Us</a>
-    <a id="navServices" href="#services">Services We Offer</a>
-    <a id="navContact" href="#contact">Contact Us Now</a>
-  </nav>
-</div>
-
-<section id="about">
-  <div class="about-container" id="aboutContainer">
-    <div class="about-text">
-      <h2 id="aboutTitle">About Us</h2>
-      <p id="aboutText">
-        We started just over a year ago with one mission: to make every lawn in our area look the best it can be.
-      </p>
-    </div>
-
-    <div class="about-image">
-      <img id="aboutImage" src="https://salisburygreenhouse.com/wp-content/uploads/Header-_0161_Spring-Yard-Clean-Up-feature-768x810.jpg">
-    </div>
-  </div>
-</section>
-
-<section id="services">
-  <div class="services-container" id="servicesContainer">
-    <div class="services-image">
-      <img id="servicesImage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdmxvP_47INKucnfoVcAae6JeKnpe5_AWKpWLLgFO-Sw&s=10">
-    </div>
-
-    <div class="services-text">
-      <h2 id="servicesTitle">We Offer</h2>
-
-      <ul id="servicesList">
-        <li>Mowing</li>
-        <li>Edging</li>
-        <li>Hedge Trimming</li>
-        <li>Weed Control</li>
-        <li>Leaf Removal</li>
-        <li>Storm Cleanup</li>
-        <li>Gutter Cleaning</li>
-        <li>Mulch Installation</li>
-        <li>Small Tree and Bush Removal</li>
-      </ul>
-
-      <a id="servicesCTA" href="#booking" class="services-cta">
-        Interested? Request A Free Quote Now
-      </a>
-    </div>
-  </div>
-</section>
-
-<section id="booking">
-  <div class="booking-container" id="bookingContainer">
-    <h2 class="booking-title" id="bookingTitle">Book a Service</h2>
-    <p class="booking-subtitle" id="bookingSubtitle">Request a time that works for you — we’ll confirm shortly.</p>
-
-    <form action="/submit-booking" method="POST">
-      <div class="form-group">
-        <label id="labelFullName" for="full-name">Full Name</label>
-        <input type="text" id="full-name" name="fullName" required>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label id="labelEmail" for="email">Email Address</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-
-        <div class="form-group">
-          <label id="labelPhone" for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" required>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label id="labelService" for="service">Select Service</label>
-        <select id="service" name="service" required>
-          <option value="" disabled selected>Choose an option</option>
-          <option value="mowing">Mowing</option>
-          <option value="edging">Edging</option>
-          <option value="hedge-trim">Hedge Trimming</option>
-          <option value="weeding">Weed Control</option>
-          <option value="leaf-removal">Leaf Removal</option>
-          <option value="storm">Storm Cleanup</option>
-          <option value="gutters">Gutter Cleaning</option>
-          <option value="mulch">Mulch Installation</option>
-          <option value="removal">Small Tree and Bush Removal</option>
-        </select>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label id="labelDate" for="date">Preferred Date</label>
-          <input type="date" id="date" name="date" required>
-        </div>
-
-        <div class="form-group">
-          <label id="labelTime" for="time">Preferred Time</label>
-          <input type="time" id="time" name="time" required>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label id="labelNotes" for="notes">Special Notes / Requests</label>
-        <textarea id="notes" name="notes" rows="4"></textarea>
-      </div>
-
-      <button id="bookingButton" type="submit">Confirm Booking</button>
-    </form>
-  </div>
-</section>
-
-<footer id="contact">
-  <hr id="footerLineTop">
-  <p id="footerTitle">Contact Us</p>
-  <a id="emailLink" href="mailto:">Email Us</a><br>
-  <a id="phoneLink" href="tel:">Call Or Text Now</a>
-  <hr id="footerLineBottom">
-</footer>
-<!-- SAFE PLACEHOLDER SCRIPT (NO EXECUTABLE JS) -->
-
-  <script>
-   
-  /*
-    CLIENT PREVIEW SYSTEM
-
-    Example:
-    yoursite.com/?b=greenleaf
-
-    Add new clients inside the "businesses" object below.
-  */
-
-  const businesses = {
-
-    greenleaf: {
-      name: "GreenLeaf Lawn Care",
-      tagline: "Professional Lawn Care, With Care.",
-
-      aboutTitle: "About Us",
-      about:
-        "We provide reliable lawn care and property maintenance services with a focus on quality, consistency, and great customer service.",
-
-      email: "hello@greenleaf.com",
-      phone: "6305551234",
-
-      aboutImage:
-        "https://example.com/about-image.jpg",
-
-      servicesImage:
-        "https://example.com/services-image.jpg",
-
-      servicesTitle: "Our Services",
-
-      services: [
-        "Mowing",
-        "Edging",
-        "Hedge Trimming",
-        "Weed Control",
-        "Leaf Removal",
-        "Storm Cleanup",
-        "Gutter Cleaning",
-        "Mulch Installation",
-        "Small Tree and Bush Removal"
-      ],
-
-      headerButton: "Book Us Now",
-      servicesCTA: "Interested? Request A Free Quote Now",
-
-      bookingTitle: "Book a Service",
-      bookingSubtitle:
-        "Request a time that works for you — we'll confirm shortly.",
-
-      bookingButton: "Request Service",
-
-      contactTitle: "Contact Us",
-      emailButton: "Email Us",
-      phoneButton: "Call Or Text Now",
-
-      colors: {
-        primary: "#0B5E2E",
-        background: "#F5EFD6",
-        white: "#FFFFFF"
-      }
-    },
-giovanni: {
-  name: "Giovanni's Landscaping",
-  tagline: "Quality Landscaping You Can Count On.",
-
-  aboutTitle: "About Us",
-  about: "Giovanni's Landscaping provides reliable lawn care to people in the Chicagoland suburbs. We make sure all of our clients are happy and want us to come back for more.",
-
-  email: "giovanni@example.com",
-  phone: "16303402087",
-
-  aboutImage: "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlvAKxHACuYyx4WDgAofSR5L73erlXfQIhrbrO7duEPOgvvm63fq893_w5l1a6dl8cie5AVX_TxIs4jjcBK8rUOj7t3SAPSzXOXj4XEWXrjv60LQqOqlcthATQQp7HcfSKFfGiqLeOJRbM=w224-h298-k-no",
-  servicesImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdmxvP_47INKucnfoVcAae6JeKnpe5_AWKpWLLgFO-Sw&s=10",
-
-  servicesTitle: "Our Services",
-
-  services: [
-    "Mowing",
-    "Edging",
-    "Mulching",
-    "Spring Cleanup"
-  ],
-
-  headerButton: "Get a Free Quote",
-  servicesCTA: "Request Your Free Quote",
-
-  bookingTitle: "Request a Quote",
-  bookingSubtitle: "Tell us what you need and we'll get back to you.",
-  bookingButton: "Request Quote",
-
-  contactTitle: "Contact Us",
-  emailButton: "Email Us",
-  phoneButton: "Call Or Text",
-
-  colors: {
-    primary: "#1B5E20",
-    background: "#F5EFD6",
-    white: "#FFFFFF"
-  }
-}
-  };
-
-
-  // --------------------------------------------------
-  // GET CLIENT FROM URL
-  // --------------------------------------------------
-
-  const params = new URLSearchParams(window.location.search);
-
-  const businessId = params.get("b");
-
-  const business = businesses[businessId];
-
-
-  // --------------------------------------------------
-  // STOP IF NO CLIENT WAS FOUND
-  // --------------------------------------------------
-
-  if (!business) {
-
-    console.log(
-      "No business selected. Use a URL such as ?b=greenleaf"
-    );
-
-  } else {
-
-
-    // --------------------------------------------------
-    // HELPER FUNCTIONS
-    // --------------------------------------------------
-
-    function setText(id, value) {
-      const element = document.getElementById(id);
-
-      if (element && value !== undefined) {
-        element.textContent = value;
-      }
+    ::selection {
+      color: white;
+      background: var(--primary);
     }
 
 
-    function setImage(id, src) {
-      const element = document.getElementById(id);
+    /* =========================================================
+       ACCESSIBILITY
+    ========================================================= */
 
-      if (element && src) {
-        element.src = src;
-      }
+    .skip-link {
+      position: fixed;
+      top: -100px;
+      left: 20px;
+      z-index: 9999;
+
+      padding: 10px 16px;
+
+      color: white;
+      background: var(--primary);
+
+      border-radius: 8px;
+
+      text-decoration: none;
+      font-weight: 700;
+
+      transition: top var(--transition);
+    }
+
+    .skip-link:focus {
+      top: 20px;
+    }
+
+    :focus-visible {
+      outline: 3px solid rgba(201, 154, 62, 0.65);
+      outline-offset: 3px;
     }
 
 
-    // --------------------------------------------------
-    // PAGE TITLE
-    // --------------------------------------------------
+    /* =========================================================
+       GLOBAL
+    ========================================================= */
 
-    document.title = business.name;
+    .container {
+      width: min(
+        calc(100% - 40px),
+        var(--container)
+      );
 
+      margin-inline: auto;
+    }
 
-    // --------------------------------------------------
-    // HEADER
-    // --------------------------------------------------
+    .section {
+      padding: 90px 0;
+    }
 
-    setText("businessName", business.name);
-    setText("tagline", business.tagline);
-    setText("headerButton", business.headerButton);
+    .section-heading {
+      max-width: 680px;
+      margin: 0 auto 50px;
+      text-align: center;
+    }
 
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
 
-    // --------------------------------------------------
-    // ABOUT SECTION
-    // --------------------------------------------------
+      margin-bottom: 14px;
 
-    setText("aboutTitle", business.aboutTitle);
-    setText("aboutText", business.about);
+      color: var(--primary);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
 
-    setImage("aboutImage", business.aboutImage);
+    .eyebrow::before {
+      content: "";
+      width: 24px;
+      height: 2px;
 
+      background: var(--accent);
+    }
 
-    // --------------------------------------------------
-    // SERVICES SECTION
-    // --------------------------------------------------
+    h1,
+    h2,
+    h3 {
+      font-family: "Manrope", sans-serif;
+      color: var(--text);
+      line-height: 1.15;
+    }
 
-    setText("servicesTitle", business.servicesTitle);
-    setText("servicesCTA", business.servicesCTA);
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 800;
+      letter-spacing: -0.055em;
+    }
 
-    setImage("servicesImage", business.servicesImage);
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      letter-spacing: -0.04em;
+    }
 
+    h3 {
+      font-size: 1.2rem;
+    }
 
-    // Create service list
-    const servicesList = document.getElementById("servicesList");
+    .section-heading p {
+      margin-top: 18px;
 
-    if (servicesList && Array.isArray(business.services)) {
-
-      servicesList.innerHTML = "";
-
-      business.services.forEach(function(service) {
-
-        const li = document.createElement("li");
-
-        li.textContent = service;
-
-        servicesList.appendChild(li);
-
-      });
-
+      color: var(--text-soft);
+      font-size: 1.08rem;
     }
 
 
-    // --------------------------------------------------
-    // BOOKING SECTION
-    // --------------------------------------------------
+    /* =========================================================
+       BUTTONS
+    ========================================================= */
 
-    setText("bookingTitle", business.bookingTitle);
-    setText("bookingSubtitle", business.bookingSubtitle);
-    setText("bookingButton", business.bookingButton);
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
 
+      min-height: 50px;
+      padding: 13px 22px;
 
-    // --------------------------------------------------
-    // FOOTER
-    // --------------------------------------------------
+      border-radius: 10px;
 
-    setText("footerTitle", business.contactTitle);
-    setText("emailLink", business.emailButton);
-    setText("phoneLink", business.phoneButton);
+      font-size: 0.98rem;
+      font-weight: 700;
+      text-decoration: none;
 
+      cursor: pointer;
 
-    // Email
-    const emailLink = document.getElementById("emailLink");
+      transition:
+        transform var(--transition),
+        background var(--transition),
+        box-shadow var(--transition),
+        color var(--transition);
+    }
 
-    if (emailLink && business.email) {
+    .btn:hover {
+      transform: translateY(-2px);
+    }
 
-      emailLink.href = "mailto:" + business.email;
+    .btn-primary {
+      color: white;
+      background: var(--primary);
 
+      box-shadow:
+        0 8px 20px rgba(23, 107, 58, 0.22);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+
+      box-shadow:
+        0 12px 26px rgba(23, 107, 58, 0.28);
+    }
+
+    .btn-secondary {
+      color: var(--primary);
+      background: white;
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      background: var(--primary-light);
+      border-color: var(--primary);
+    }
+
+    .btn-full {
+      width: 100%;
     }
 
 
-    // Phone
-    const phoneLink = document.getElementById("phoneLink");
+    /* =========================================================
+       HEADER / NAVIGATION
+    ========================================================= */
 
-    if (phoneLink && business.phone) {
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
 
-      const cleanPhone = business.phone.replace(/\D/g, "");
+      background: rgba(246, 248, 245, 0.9);
 
-      phoneLink.href = "tel:" + cleanPhone;
+      border-bottom: 1px solid rgba(221, 229, 223, 0.7);
 
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      min-height: 76px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+
+      color: var(--primary);
+      text-decoration: none;
+      font-family: "Manrope", sans-serif;
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+
+      width: 40px;
+      height: 40px;
+
+      color: white;
+      background: var(--primary);
+
+      border-radius: 11px;
+
+      font-size: 1.15rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      position: relative;
+
+      color: var(--text-soft);
+
+      font-size: 0.94rem;
+      font-weight: 600;
+
+      text-decoration: none;
+
+      transition: color var(--transition);
+    }
+
+    .nav-links a::after {
+      content: "";
+
+      position: absolute;
+      left: 0;
+      bottom: -7px;
+
+      width: 0;
+      height: 2px;
+
+      background: var(--primary);
+
+      transition: width var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      margin-left: 4px;
+    }
+
+    .mobile-menu-button {
+      display: none;
+
+      width: 44px;
+      height: 44px;
+
+      color: var(--primary);
+      background: white;
+
+      border: 1px solid var(--border);
+      border-radius: 10px;
+
+      cursor: pointer;
+    }
+
+    .mobile-menu-button span {
+      display: block;
+
+      width: 20px;
+      height: 2px;
+
+      margin: 4px auto;
+
+      background: currentColor;
     }
 
 
-    // --------------------------------------------------
-    // COLORS
-    // --------------------------------------------------
+    /* =========================================================
+       HERO
+    ========================================================= */
 
-    if (business.colors) {
+    .hero {
+      position: relative;
+      overflow: hidden;
 
-      const root = document.documentElement;
+      padding: 90px 0 100px;
 
-      if (business.colors.primary) {
-        root.style.setProperty(
-          "--business-primary",
-          business.colors.primary
+      background:
+        radial-gradient(
+          circle at 85% 15%,
+          rgba(201, 154, 62, 0.14),
+          transparent 28%
+        ),
+        linear-gradient(
+          135deg,
+          #F6F8F5 0%,
+          #EAF3EB 100%
         );
-      }
+    }
 
-      if (business.colors.background) {
-        root.style.setProperty(
-          "--business-background",
-          business.colors.background
-        );
-      }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: 70px;
+    }
 
-      if (business.colors.white) {
-        root.style.setProperty(
-          "--business-white",
-          business.colors.white
-        );
-      }
+    .hero-content {
+      max-width: 650px;
+    }
 
+    .hero h1 {
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero-description {
+      max-width: 600px;
+
+      margin-bottom: 32px;
+
+      color: var(--text-soft);
+      font-size: 1.15rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .hero-trust {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+
+      margin-top: 32px;
+
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .hero-trust span {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .hero-trust span::before {
+      content: "✓";
+
+      display: grid;
+      place-items: center;
+
+      width: 20px;
+      height: 20px;
+
+      color: white;
+      background: var(--primary);
+
+      border-radius: 50%;
+
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
+
+    .hero-image-wrap {
+      position: relative;
+    }
+
+    .hero-image {
+      min-height: 500px;
+
+      overflow: hidden;
+
+      border-radius: var(--radius-xl);
+
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 500px;
+
+      object-fit: cover;
+    }
+
+    .hero-badge {
+      position: absolute;
+      left: -25px;
+      bottom: 30px;
+
+      max-width: 240px;
+
+      padding: 18px;
+
+      background: white;
+
+      border-radius: 15px;
+
+      box-shadow: var(--shadow-md);
+    }
+
+    .hero-badge strong {
+      display: block;
+
+      margin-bottom: 3px;
+
+      color: var(--primary);
+
+      font-family: "Manrope", sans-serif;
+      font-size: 1.05rem;
+    }
+
+    .hero-badge span {
+      color: var(--text-muted);
+      font-size: 0.83rem;
     }
 
 
-    // --------------------------------------------------
-    // APPLY COLORS TO THE PAGE
-    // --------------------------------------------------
+    /* =========================================================
+       ABOUT
+    ========================================================= */
 
-    const style = document.createElement("style");
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      align-items: center;
+      gap: 70px;
+    }
 
-    style.textContent = `
-      body {
-        color: ${business.colors?.primary || "forestgreen"};
-        background-color: ${business.colors?.background || "#F5EFD6"};
-      }
+    .about-image {
+      overflow: hidden;
 
-      hr {
-        border-color: ${business.colors?.primary || "forestgreen"};
-      }
+      min-height: 480px;
 
-      a {
-        color: ${business.colors?.primary || "#0B5E2E"};
+      border-radius: var(--radius-xl);
+
+      box-shadow: var(--shadow-md);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 480px;
+
+      object-fit: cover;
+    }
+
+    .about-content {
+      max-width: 570px;
+    }
+
+    .about-content h2 {
+      margin-bottom: 20px;
+    }
+
+    .about-content > p {
+      color: var(--text-soft);
+      font-size: 1.08rem;
+    }
+
+    .about-benefits {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+
+      margin-top: 30px;
+    }
+
+    .benefit {
+      padding: 18px;
+
+      background: white;
+
+      border: 1px solid var(--border);
+      border-radius: 13px;
+    }
+
+    .benefit-icon {
+      display: grid;
+      place-items: center;
+
+      width: 38px;
+      height: 38px;
+
+      margin-bottom: 12px;
+
+      color: var(--primary);
+      background: var(--primary-light);
+
+      border-radius: 10px;
+
+      font-weight: 800;
+    }
+
+    .benefit strong {
+      display: block;
+
+      margin-bottom: 3px;
+
+      font-family: "Manrope", sans-serif;
+      font-size: 0.98rem;
+    }
+
+    .benefit span {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+
+    /* =========================================================
+       SERVICES
+    ========================================================= */
+
+    .services-section {
+      background: white;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      padding: 25px;
+
+      background: var(--background);
+
+      border: 1px solid var(--border);
+      border-radius: 16px;
+
+      transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+
+      border-color: rgba(23, 107, 58, 0.3);
+
+      box-shadow: var(--shadow-md);
+    }
+
+    .service-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 34px;
+      height: 34px;
+
+      margin-bottom: 20px;
+
+      color: var(--primary);
+      background: var(--primary-light);
+
+      border-radius: 9px;
+
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .service-card h3 {
+      margin-bottom: 8px;
+    }
+
+    .service-card p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .services-bottom {
+      display: flex;
+      justify-content: center;
+
+      margin-top: 45px;
+    }
+
+
+    /* =========================================================
+       CTA
+    ========================================================= */
+
+    .cta-section {
+      padding: 70px 0;
+    }
+
+    .cta-box {
+      position: relative;
+      overflow: hidden;
+
+      padding: 55px;
+
+      color: white;
+      background:
+        radial-gradient(
+          circle at 90% 10%,
+          rgba(255, 255, 255, 0.12),
+          transparent 25%
+        ),
+        var(--primary);
+
+      border-radius: var(--radius-xl);
+
+      box-shadow: var(--shadow-lg);
+    }
+
+    .cta-box::after {
+      content: "";
+
+      position: absolute;
+      right: -80px;
+      bottom: -100px;
+
+      width: 300px;
+      height: 300px;
+
+      border: 50px solid rgba(255, 255, 255, 0.04);
+      border-radius: 50%;
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 1;
+
+      max-width: 680px;
+    }
+
+    .cta-box h2 {
+      margin-bottom: 14px;
+
+      color: white;
+    }
+
+    .cta-box p {
+      margin-bottom: 25px;
+
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1.05rem;
+    }
+
+    .cta-box .btn-primary {
+      color: var(--primary);
+      background: white;
+      box-shadow: none;
+    }
+
+    .cta-box .btn-primary:hover {
+      background: var(--accent-light);
+    }
+
+
+    /* =========================================================
+       BOOKING
+    ========================================================= */
+
+    .booking-section {
+      padding-top: 50px;
+    }
+
+    .booking-layout {
+      display: grid;
+      grid-template-columns: 0.75fr 1.25fr;
+      gap: 55px;
+      align-items: start;
+    }
+
+    .booking-info {
+      position: sticky;
+      top: 110px;
+    }
+
+    .booking-info h2 {
+      margin-bottom: 17px;
+    }
+
+    .booking-info > p {
+      margin-bottom: 25px;
+
+      color: var(--text-soft);
+      font-size: 1.02rem;
+    }
+
+    .contact-options {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-option {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+
+      padding: 14px;
+
+      color: var(--text);
+      background: white;
+
+      border: 1px solid var(--border);
+      border-radius: 12px;
+
+      text-decoration: none;
+
+      transition:
+        border-color var(--transition),
+        transform var(--transition);
+    }
+
+    .contact-option:hover {
+      transform: translateX(3px);
+
+      border-color: var(--primary);
+    }
+
+    .contact-icon {
+      display: grid;
+      place-items: center;
+
+      flex: 0 0 40px;
+
+      width: 40px;
+      height: 40px;
+
+      color: var(--primary);
+      background: var(--primary-light);
+
+      border-radius: 10px;
+    }
+
+    .contact-option strong {
+      display: block;
+
+      font-size: 0.9rem;
+    }
+
+    .contact-option span {
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+
+    .booking-card {
+      padding: 38px;
+
+      background: white;
+
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+
+      box-shadow: var(--shadow-md);
+    }
+
+    .booking-card-header {
+      margin-bottom: 28px;
+    }
+
+    .booking-card-header h3 {
+      margin-bottom: 6px;
+
+      font-size: 1.65rem;
+    }
+
+    .booking-card-header p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 17px;
+    }
+
+    label {
+      display: block;
+
+      margin-bottom: 7px;
+
+      color: var(--text);
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+
+      padding: 13px 14px;
+
+      color: var(--text);
+      background: #FBFCFB;
+
+      border: 1px solid var(--border);
+      border-radius: 9px;
+
+      outline: none;
+
+      transition:
+        border-color var(--transition),
+        box-shadow var(--transition),
+        background var(--transition);
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #9AA59E;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      background: white;
+
+      border-color: var(--primary);
+
+      box-shadow:
+        0 0 0 4px rgba(23, 107, 58, 0.1);
+    }
+
+    .form-note {
+      margin-top: 12px;
+
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      text-align: center;
+    }
+
+    .form-message {
+      display: none;
+
+      margin-bottom: 18px;
+      padding: 13px 15px;
+
+      border-radius: 9px;
+
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .form-message.success {
+      display: block;
+
+      color: #135C34;
+      background: #EAF6EE;
+      border: 1px solid #B9DEC5;
+    }
+
+    .form-message.error {
+      display: block;
+
+      color: #8D1C13;
+      background: #FEF3F2;
+      border: 1px solid #F4C7C3;
+    }
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+      margin-top: 70px;
+
+      color: rgba(255, 255, 255, 0.75);
+      background: #102319;
+    }
+
+    .footer-main {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      gap: 60px;
+
+      padding: 65px 0;
+    }
+
+    .footer-brand {
+      color: white;
+      margin-bottom: 15px;
+    }
+
+    .footer-description {
+      max-width: 350px;
+
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.9rem;
+    }
+
+    .footer-column h3 {
+      margin-bottom: 15px;
+
+      color: white;
+
+      font-size: 0.95rem;
+    }
+
+    .footer-column a {
+      display: block;
+
+      margin-bottom: 8px;
+
+      color: rgba(255, 255, 255, 0.65);
+
+      font-size: 0.88rem;
+      text-decoration: none;
+
+      transition: color var(--transition);
+    }
+
+    .footer-column a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      padding: 20px 0;
+
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+      color: rgba(255, 255, 255, 0.45);
+
+      font-size: 0.78rem;
+    }
+
+
+    /* =========================================================
+       MOBILE NAV
+    ========================================================= */
+
+    @media (max-width: 800px) {
+
+      .mobile-menu-button {
+        display: block;
       }
 
       .navbar {
-        border-top-color: ${business.colors?.primary || "forestgreen"};
-        border-bottom-color: ${business.colors?.primary || "forestgreen"};
+        position: relative;
       }
 
-      .about-text h2,
-      .services-text h2 {
-        color: ${business.colors?.primary || "forestgreen"};
+      .nav-links {
+        display: none;
+
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 0;
+        right: 0;
+
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        padding: 10px;
+
+        background: white;
+
+        border: 1px solid var(--border);
+        border-radius: 14px;
+
+        box-shadow: var(--shadow-md);
       }
 
-      button {
-        color: ${business.colors?.primary || "forestgreen"};
-        border-color: ${business.colors?.primary || "forestgreen"};
-        background-color: ${business.colors?.background || "#F5EFD6"};
+      .nav-links.open {
+        display: flex;
       }
 
-      input:focus,
-      select:focus,
-      textarea:focus {
-        outline-color: ${business.colors?.primary || "forestgreen"};
+      .nav-links a {
+        padding: 13px;
       }
 
-      #booking {
-        background-color: ${business.colors?.background || "#F5EFD6"};
+      .nav-links a::after {
+        display: none;
       }
-    `;
 
-    document.head.appendChild(style);
+      .nav-cta {
+        margin: 5px 0 0;
+        text-align: center;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .booking-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 65px 0 80px;
+      }
+
+      .hero-image {
+        min-height: 350px;
+      }
+
+      .hero-image img {
+        height: 350px;
+      }
+
+      .hero-badge {
+        left: 15px;
+        bottom: 15px;
+      }
+
+      .about-image {
+        min-height: 350px;
+      }
+
+      .about-image img {
+        height: 350px;
+      }
+
+      .booking-info {
+        position: static;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
 
 
-    // --------------------------------------------------
-    // PREVENT PAST BOOKING DATES
-    // --------------------------------------------------
+    /* =========================================================
+       SMALL MOBILE
+    ========================================================= */
 
-    const dateInput = document.getElementById("date");
+    @media (max-width: 560px) {
 
-    if (dateInput) {
+      .container {
+        width: min(
+          calc(100% - 28px),
+          var(--container)
+        );
+      }
 
-      const today = new Date();
+      .section {
+        padding: 65px 0;
+      }
 
-      const year = today.getFullYear();
+      .hero-actions {
+        flex-direction: column;
+      }
 
-      const month = String(
-        today.getMonth() + 1
-      ).padStart(2, "0");
+      .hero-actions .btn {
+        width: 100%;
+      }
 
-      const day = String(
-        today.getDate()
-      ).padStart(2, "0");
+      .hero-trust {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .about-benefits,
+      .services-grid,
+      .form-row,
+      .footer-main {
+        grid-template-columns: 1fr;
+      }
+
+      .booking-card {
+        padding: 24px 18px;
+      }
+
+      .cta-box {
+        padding: 35px 24px;
+      }
+
+      .footer-main {
+        gap: 35px;
+      }
+    }
+
+
+    /* =========================================================
+       REDUCED MOTION
+    ========================================================= */
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <a href="#main-content" class="skip-link">
+    Skip to content
+  </a>
+
+
+  <!-- =======================================================
+       HEADER
+  ======================================================== -->
+
+  <header class="site-header">
+
+    <div class="container navbar">
+
+      <a href="#" class="brand" id="brandLink" aria-label="Home">
+
+        <span class="brand-mark" aria-hidden="true">
+          🌿
+        </span>
+
+        <span id="brandName">
+          Lawn Care
+        </span>
+
+      </a>
+
+
+      <button
+        class="mobile-menu-button"
+        id="mobileMenuButton"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="navigation"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+
+      <nav
+        class="nav-links"
+        id="navigation"
+        aria-label="Main navigation"
+      >
+
+        <a href="#about" id="navAbout">
+          About
+        </a>
+
+        <a href="#services" id="navServices">
+          Services
+        </a>
+
+        <a href="#booking" id="navBooking">
+          Contact
+        </a>
+
+        <a
+          href="#booking"
+          class="btn btn-primary nav-cta"
+          id="navCTA"
+        >
+          Get a Quote
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main id="main-content">
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="hero">
+
+      <div class="container hero-grid">
+
+        <div class="hero-content">
+
+          <div class="eyebrow">
+            Local • Reliable • Professional
+          </div>
+
+          <h1>
+            <span id="heroBusinessName">
+              Professional Lawn Care
+            </span>
+          </h1>
+
+          <p
+            class="hero-description"
+            id="heroTagline"
+          >
+            Quality lawn care and property maintenance
+            you can count on.
+          </p>
+
+          <div class="hero-actions">
+
+            <a
+              href="#booking"
+              class="btn btn-primary"
+              id="heroCTA"
+            >
+              Get a Free Quote
+            </a>
+
+            <a
+              href="#services"
+              class="btn btn-secondary"
+            >
+              View Services
+            </a>
+
+          </div>
+
+
+          <div class="hero-trust">
+
+            <span>
+              Reliable service
+            </span>
+
+            <span>
+              Quality work
+            </span>
+
+            <span>
+              Free quotes
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="hero-image-wrap">
+
+          <div class="hero-image">
+
+            <img
+              id="heroImage"
+              src="https://salisburygreenhouse.com/wp-content/uploads/Header-_0161_Spring-Yard-Clean-Up-feature-768x810.jpg"
+              alt="Professional lawn and yard care"
+              loading="eager"
+            >
+
+          </div>
+
+
+          <div class="hero-badge">
+
+            <strong>
+              Your property, our priority.
+            </strong>
+
+            <span id="heroBadgeText">
+              Professional service with attention to detail.
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ABOUT
+    ====================================================== -->
+
+    <section
+      class="section"
+      id="about"
+    >
+
+      <div class="container about-grid">
+
+        <div class="about-image">
+
+          <img
+            id="aboutImage"
+            src="https://salisburygreenhouse.com/wp-content/uploads/Header-_0161_Spring-Yard-Clean-Up-feature-768x810.jpg"
+            alt="Lawn care and landscaping work"
+            loading="lazy"
+          >
+
+        </div>
+
+
+        <div class="about-content">
+
+          <div class="eyebrow">
+            About Us
+          </div>
+
+          <h2 id="aboutTitle">
+            We take pride in every property we service.
+          </h2>
+
+          <p id="aboutText">
+            We provide reliable lawn care and property
+            maintenance services with a focus on quality,
+            consistency, and great customer service.
+          </p>
+
+
+          <div class="about-benefits">
+
+            <div class="benefit">
+
+              <div class="benefit-icon">
+                ✓
+              </div>
+
+              <strong>
+                Dependable
+              </strong>
+
+              <span>
+                Consistent service you can count on.
+              </span>
+
+            </div>
+
+
+            <div class="benefit">
+
+              <div class="benefit-icon">
+                ★
+              </div>
+
+              <strong>
+                Quality Focused
+              </strong>
+
+              <span>
+                We care about the finished result.
+              </span>
+
+            </div>
+
+
+            <div class="benefit">
+
+              <div class="benefit-icon">
+                $
+              </div>
+
+              <strong>
+                Free Quotes
+              </strong>
+
+              <span>
+                Know what you're getting before we start.
+              </span>
+
+            </div>
+
+
+            <div class="benefit">
+
+              <div class="benefit-icon">
+                ♥
+              </div>
+
+              <strong>
+                Customer First
+              </strong>
+
+              <span>
+                Your satisfaction matters to us.
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SERVICES
+    ====================================================== -->
+
+    <section
+      class="section services-section"
+      id="services"
+    >
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="eyebrow">
+            What We Do
+          </div>
+
+          <h2 id="servicesTitle">
+            Professional Services
+          </h2>
+
+          <p>
+            From routine lawn maintenance to seasonal
+            cleanup, we've got your property covered.
+          </p>
+
+        </div>
+
+
+        <div
+          class="services-grid"
+          id="servicesGrid"
+        >
+          <!-- Generated by JavaScript -->
+        </div>
+
+
+        <div class="services-bottom">
+
+          <a
+            href="#booking"
+            class="btn btn-primary"
+            id="servicesCTA"
+          >
+            Request a Free Quote
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CTA
+    ====================================================== -->
+
+    <section class="cta-section">
+
+      <div class="container">
+
+        <div class="cta-box">
+
+          <div class="cta-content">
+
+            <div class="eyebrow" style="color:#DDB86B;">
+              Ready to get started?
+            </div>
+
+            <h2 id="ctaTitle">
+              Let's make your property look its best.
+            </h2>
+
+            <p id="ctaText">
+              Tell us what you need and we'll get back to
+              you with the next steps.
+            </p>
+
+            <a
+              href="#booking"
+              class="btn btn-primary"
+              id="ctaButton"
+            >
+              Request a Free Quote
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         BOOKING
+    ====================================================== -->
+
+    <section
+      class="section booking-section"
+      id="booking"
+    >
+
+      <div class="container booking-layout">
+
+
+        <div class="booking-info">
+
+          <div class="eyebrow">
+            Get In Touch
+          </div>
+
+          <h2 id="bookingTitle">
+            Request a Quote
+          </h2>
+
+          <p id="bookingSubtitle">
+            Tell us what you need and we'll get back to you
+            as soon as possible.
+          </p>
+
+
+          <div class="contact-options">
+
+            <a
+              href="mailto:"
+              class="contact-option"
+              id="emailLink"
+            >
+
+              <span class="contact-icon">
+                ✉
+              </span>
+
+              <span>
+                <strong>
+                  Email Us
+                </strong>
+
+                <span id="emailDisplay">
+                  Send us an email
+                </span>
+              </span>
+
+            </a>
+
+
+            <a
+              href="tel:"
+              class="contact-option"
+              id="phoneLink"
+            >
+
+              <span class="contact-icon">
+                ☎
+              </span>
+
+              <span>
+                <strong>
+                  Call or Text
+                </strong>
+
+                <span id="phoneDisplay">
+                  Give us a call
+                </span>
+              </span>
+
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="booking-card">
+
+          <div class="booking-card-header">
+
+            <h3>
+              Tell us about your project
+            </h3>
+
+            <p>
+              Fill out the form below and we'll be in touch.
+            </p>
+
+          </div>
+
+
+          <div
+            id="formMessage"
+            class="form-message"
+            role="alert"
+          ></div>
+
+
+          <form
+            id="bookingForm"
+            novalidate
+          >
+
+            <div class="form-group">
+
+              <label for="full-name">
+                Full Name *
+              </label>
+
+              <input
+                type="text"
+                id="full-name"
+                name="fullName"
+                autocomplete="name"
+                placeholder="John Smith"
+                required
+              >
+
+            </div>
+
+
+            <div class="form-row">
+
+              <div class="form-group">
+
+                <label for="email">
+                  Email Address *
+                </label>
+
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  autocomplete="email"
+                  placeholder="john@example.com"
+                  required
+                >
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="phone">
+                  Phone Number *
+                </label>
+
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  autocomplete="tel"
+                  placeholder="(630) 555-1234"
+                  required
+                >
+
+              </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="service">
+                Service Needed *
+              </label>
+
+              <select
+                id="service"
+                name="service"
+                required
+              >
+
+                <option
+                  value=""
+                  selected
+                  disabled
+                >
+                  Choose a service
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="form-row">
+
+              <div class="form-group">
+
+                <label for="date">
+                  Preferred Date
+                </label>
+
+                <input
+                  type="date"
+                  id="date"
+                  name="date"
+                >
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="time">
+                  Preferred Time
+                </label>
+
+                <input
+                  type="time"
+                  id="time"
+                  name="time"
+                >
+
+              </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="notes">
+                Additional Details
+              </label>
+
+              <textarea
+                id="notes"
+                name="notes"
+                placeholder="Tell us anything that would help us understand the job..."
+              ></textarea>
+
+            </div>
+
+
+            <button
+              type="submit"
+              class="btn btn-primary btn-full"
+              id="bookingButton"
+            >
+              Request a Quote
+            </button>
+
+
+            <p class="form-note">
+              By submitting this form, you agree to be contacted
+              regarding your request.
+            </p>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =======================================================
+       FOOTER
+  ======================================================== -->
+
+  <footer id="contact">
+
+    <div class="container footer-main">
+
+
+      <div>
+
+        <a
+          href="#"
+          class="brand footer-brand"
+        >
+
+          <span class="brand-mark">
+            🌿
+          </span>
+
+          <span id="footerBusinessName">
+            Lawn Care
+          </span>
+
+        </a>
+
+
+        <p
+          class="footer-description"
+          id="footerDescription"
+        >
+          Professional lawn care and property maintenance
+          services you can count on.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>
+          Navigation
+        </h3>
+
+        <a href="#about">
+          About Us
+        </a>
+
+        <a href="#services">
+          Services
+        </a>
+
+        <a href="#booking">
+          Request a Quote
+        </a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>
+          Contact
+        </h3>
+
+        <a
+          href="mailto:"
+          id="footerEmail"
+        >
+          Email Us
+        </a>
+
+        <a
+          href="tel:"
+          id="footerPhone"
+        >
+          Call or Text
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <div class="container">
+
+        <p>
+          © <span id="currentYear"></span>
+          <span id="copyrightName">
+            Lawn Care
+          </span>.
+          All rights reserved.
+        </p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <script>
+
+    /* =========================================================
+       BUSINESS CONFIGURATION
+
+       Add additional businesses here.
+
+       URL examples:
+
+       yoursite.com/?b=greenleaf
+       yoursite.com/?b=giovanni
+
+    ========================================================= */
+
+    const businesses = {
+
+      greenleaf: {
+
+        name: "GreenLeaf Lawn Care",
+
+        tagline:
+          "Professional Lawn Care, With Care.",
+
+        aboutTitle:
+          "We take pride in every property we service.",
+
+        about:
+          "We provide reliable lawn care and property maintenance services with a focus on quality, consistency, and great customer service.",
+
+        email:
+          "hello@greenleaf.com",
+
+        phone:
+          "6305551234",
+
+        aboutImage:
+          "https://salisburygreenhouse.com/wp-content/uploads/Header-_0161_Spring-Yard-Clean-Up-feature-768x810.jpg",
+
+        heroImage:
+          "https://salisburygreenhouse.com/wp-content/uploads/Header-_0161_Spring-Yard-Clean-Up-feature-768x810.jpg",
+
+        servicesImage:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdmxvP_47INKucnfoVcAae6JeKnpe5_AWKpWLLgFO-Sw&s=10",
+
+        servicesTitle:
+          "Professional Services",
+
+        services: [
+
+          "Mowing",
+
+          "Edging",
+
+          "Hedge Trimming",
+
+          "Weed Control",
+
+          "Leaf Removal",
+
+          "Storm Cleanup",
+
+          "Gutter Cleaning",
+
+          "Mulch Installation",
+
+          "Small Tree and Bush Removal"
+
+        ],
+
+        headerButton:
+          "Get a Free Quote",
+
+        servicesCTA:
+          "Request a Free Quote",
+
+        bookingTitle:
+          "Request a Quote",
+
+        bookingSubtitle:
+          "Tell us what you need and we'll get back to you as soon as possible.",
+
+        bookingButton:
+          "Request a Quote",
+
+        contactTitle:
+          "Contact Us",
+
+        emailButton:
+          "Email Us",
+
+        phoneButton:
+          "Call or Text",
+
+        badge:
+          "Professional service with attention to detail.",
+
+        colors: {
+
+          primary: "#176B3A",
+
+          background: "#F6F8F5",
+
+          accent: "#C99A3E"
+
+        }
+
+      },
+
+
+      giovanni: {
+
+        name:
+          "Giovanni's Landscaping",
+
+        tagline:
+          "Quality Landscaping You Can Count On.",
+
+        aboutTitle:
+          "Local service. Quality results.",
+
+        about:
+          "Giovanni's Landscaping provides reliable lawn care to people throughout the Chicagoland suburbs. We work hard to make sure our clients are happy and want us back for their next project.",
+
+        email:
+          "giovanni@example.com",
+
+        phone:
+          "16303402087",
+
+        aboutImage:
+          "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlvAKxHACuYyx4WDgAofSR5L73erlXfQIhrbrO7duEPOgvvm63fq893_w5l1a6dl8cie5AVX_TxIs4jjcBK8rUOj7t3SAPSzXOXj4XEWXrjv60LQqOqlcthATQQp7HcfSKFfGiqLeOJRbM=w224-h298-k-no",
+
+        heroImage:
+          "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlvAKxHACuYyx4WDgAofSR5L73erlXfQIhrbrO7duEPOgvvm63fq893_w5l1a6dl8cie5AVX_TxIs4jjcBK8rUOj7t3SAPSzXOXj4XEWXrjv60LQqOqlcthATQQp7HcfSKFfGiqLeOJRbM=w224-h298-k-no",
+
+        servicesImage:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdmxvP_47INKucnfoVcAae6JeKnpe5_AWKpWLLgFO-Sw&s=10",
+
+        servicesTitle:
+          "Our Services",
+
+        services: [
+
+          "Mowing",
+
+          "Edging",
+
+          "Mulching",
+
+          "Spring Cleanup"
+
+        ],
+
+        headerButton:
+          "Get a Free Quote",
+
+        servicesCTA:
+          "Request Your Free Quote",
+
+        bookingTitle:
+          "Request a Quote",
+
+        bookingSubtitle:
+          "Tell us what you need and we'll get back to you.",
+
+        bookingButton:
+          "Request Quote",
+
+        contactTitle:
+          "Contact Us",
+
+        emailButton:
+          "Email Us",
+
+        phoneButton:
+          "Call or Text",
+
+        badge:
+          "Serving homeowners throughout the Chicagoland suburbs.",
+
+        colors: {
+
+          primary: "#1B5E20",
+
+          background: "#F6F8F5",
+
+          accent: "#C99A3E"
+
+        }
+
+      }
+
+    };
+
+
+    /* =========================================================
+       GET BUSINESS
+    ========================================================= */
+
+    const params =
+      new URLSearchParams(window.location.search);
+
+    const businessId =
+      params.get("b");
+
+    /*
+      Default business.
+
+      Change this to:
+
+      const DEFAULT_BUSINESS = "giovanni";
+
+      if you want Giovanni's page to appear when
+      there is no ?b= parameter.
+    */
+
+    const DEFAULT_BUSINESS = "greenleaf";
+
+    const business =
+      businesses[businessId] ||
+      businesses[DEFAULT_BUSINESS];
+
+
+    /* =========================================================
+       HELPER FUNCTIONS
+    ========================================================= */
+
+    function setText(id, value) {
+
+      const element =
+        document.getElementById(id);
+
+      if (
+        element &&
+        value !== undefined &&
+        value !== null
+      ) {
+
+        element.textContent = value;
+
+      }
+
+    }
+
+
+    function setAttribute(
+      id,
+      attribute,
+      value
+    ) {
+
+      const element =
+        document.getElementById(id);
+
+      if (
+        element &&
+        value !== undefined &&
+        value !== null
+      ) {
+
+        element.setAttribute(
+          attribute,
+          value
+        );
+
+      }
+
+    }
+
+
+    function setImage(
+      id,
+      source,
+      alt
+    ) {
+
+      const element =
+        document.getElementById(id);
+
+      if (!element) {
+        return;
+      }
+
+      if (source) {
+        element.src = source;
+      }
+
+      if (alt) {
+        element.alt = alt;
+      }
+
+    }
+
+
+    function cleanPhone(phone) {
+
+      return String(phone || "")
+        .replace(/\D/g, "");
+
+    }
+
+
+    function formatPhone(phone) {
+
+      const digits =
+        cleanPhone(phone);
+
+      if (digits.length === 11 && digits[0] === "1") {
+
+        return `(${digits.slice(1, 4)}) ${digits.slice(4, 7)}-${digits.slice(7)}`;
+
+      }
+
+      if (digits.length === 10) {
+
+        return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
+
+      }
+
+      return phone;
+
+    }
+
+
+    /* =========================================================
+       APPLY BUSINESS
+    ========================================================= */
+
+    function applyBusiness() {
+
+      document.title =
+        business.name;
+
+      setAttribute(
+        "metaDescription",
+        "content",
+        `${business.name} — ${business.tagline}`
+      );
+
+
+      /* -----------------------------------------
+         Names
+      ----------------------------------------- */
+
+      setText(
+        "brandName",
+        business.name
+      );
+
+      setText(
+        "heroBusinessName",
+        business.name
+      );
+
+      setText(
+        "footerBusinessName",
+        business.name
+      );
+
+      setText(
+        "copyrightName",
+        business.name
+      );
+
+
+      /* -----------------------------------------
+         Hero
+      ----------------------------------------- */
+
+      setText(
+        "heroTagline",
+        business.tagline
+      );
+
+      setText(
+        "heroCTA",
+        business.headerButton
+      );
+
+      setText(
+        "heroBadgeText",
+        business.badge
+      );
+
+
+      setImage(
+        "heroImage",
+        business.heroImage ||
+        business.aboutImage,
+        `${business.name} lawn care`
+      );
+
+
+      /* -----------------------------------------
+         About
+      ----------------------------------------- */
+
+      setText(
+        "aboutTitle",
+        business.aboutTitle
+      );
+
+      setText(
+        "aboutText",
+        business.about
+      );
+
+
+      setImage(
+        "aboutImage",
+        business.aboutImage,
+        `${business.name} lawn care and landscaping`
+      );
+
+
+      /* -----------------------------------------
+         Services
+      ----------------------------------------- */
+
+      setText(
+        "servicesTitle",
+        business.servicesTitle
+      );
+
+      setText(
+        "servicesCTA",
+        business.servicesCTA
+      );
+
+
+      /* -----------------------------------------
+         Booking
+      ----------------------------------------- */
+
+      setText(
+        "bookingTitle",
+        business.bookingTitle
+      );
+
+      setText(
+        "bookingSubtitle",
+        business.bookingSubtitle
+      );
+
+      setText(
+        "bookingButton",
+        business.bookingButton
+      );
+
+
+      /* -----------------------------------------
+         Contact
+      ----------------------------------------- */
+
+      const phone =
+        cleanPhone(business.phone);
+
+      const formattedPhone =
+        formatPhone(business.phone);
+
+
+      const emailHref =
+        `mailto:${business.email}`;
+
+      const phoneHref =
+        `tel:${phone}`;
+
+
+      setAttribute(
+        "emailLink",
+        "href",
+        emailHref
+      );
+
+      setAttribute(
+        "footerEmail",
+        "href",
+        emailHref
+      );
+
+      setAttribute(
+        "phoneLink",
+        "href",
+        phoneHref
+      );
+
+      setAttribute(
+        "footerPhone",
+        "href",
+        phoneHref
+      );
+
+
+      setText(
+        "emailDisplay",
+        business.email
+      );
+
+      setText(
+        "phoneDisplay",
+        formattedPhone
+      );
+
+
+      /* -----------------------------------------
+         Footer
+      ----------------------------------------- */
+
+      setText(
+        "footerDescription",
+        `${business.name} — ${business.tagline}`
+      );
+
+
+      /* -----------------------------------------
+         Services List
+      ----------------------------------------- */
+
+      renderServices();
+
+
+      /* -----------------------------------------
+         Form Options
+      ----------------------------------------- */
+
+      renderServiceOptions();
+
+
+      /* -----------------------------------------
+         Colors
+      ----------------------------------------- */
+
+      if (business.colors) {
+
+        if (business.colors.primary) {
+
+          document.documentElement
+            .style
+            .setProperty(
+              "--primary",
+              business.colors.primary
+            );
+
+        }
+
+        if (business.colors.background) {
+
+          document.documentElement
+            .style
+            .setProperty(
+              "--background",
+              business.colors.background
+            );
+
+        }
+
+        if (business.colors.accent) {
+
+          document.documentElement
+            .style
+            .setProperty(
+              "--accent",
+              business.colors.accent
+            );
+
+        }
+
+      }
+
+    }
+
+
+    /* =========================================================
+       SERVICES
+    ========================================================= */
+
+    function renderServices() {
+
+      const grid =
+        document.getElementById(
+          "servicesGrid"
+        );
+
+      if (!grid) {
+        return;
+      }
+
+      grid.innerHTML = "";
+
+
+      business.services.forEach(
+        function(service, index) {
+
+          const card =
+            document.createElement("article");
+
+          card.className =
+            "service-card";
+
+
+          const number =
+            String(index + 1)
+              .padStart(2, "0");
+
+
+          card.innerHTML = `
+
+            <div class="service-number">
+              ${number}
+            </div>
+
+            <h3></h3>
+
+            <p>
+              Professional ${service.toLowerCase()}
+              service with attention to detail.
+            </p>
+
+          `;
+
+
+          card.querySelector("h3")
+            .textContent = service;
+
+
+          grid.appendChild(card);
+
+        }
+      );
+
+    }
+
+
+    /* =========================================================
+       SERVICE SELECT
+    ========================================================= */
+
+    function renderServiceOptions() {
+
+      const select =
+        document.getElementById(
+          "service"
+        );
+
+      if (!select) {
+        return;
+      }
+
+      select.innerHTML = "";
+
+
+      const placeholder =
+        document.createElement("option");
+
+      placeholder.value = "";
+
+      placeholder.textContent =
+        "Choose a service";
+
+      placeholder.disabled = true;
+
+      placeholder.selected = true;
+
+
+      select.appendChild(
+        placeholder
+      );
+
+
+      business.services.forEach(
+        function(service) {
+
+          const option =
+            document.createElement("option");
+
+          option.value =
+            service
+              .toLowerCase()
+              .replace(
+                /[^a-z0-9]+/g,
+                "-"
+              )
+              .replace(
+                /^-|-$/g,
+                ""
+              );
+
+          option.textContent =
+            service;
+
+
+          select.appendChild(
+            option
+          );
+
+        }
+      );
+
+    }
+
+
+    /* =========================================================
+       DATE RESTRICTION
+    ========================================================= */
+
+    function setMinimumDate() {
+
+      const dateInput =
+        document.getElementById(
+          "date"
+        );
+
+      if (!dateInput) {
+        return;
+      }
+
+
+      const today =
+        new Date();
+
+
+      const year =
+        today.getFullYear();
+
+      const month =
+        String(
+          today.getMonth() + 1
+        ).padStart(2, "0");
+
+      const day =
+        String(
+          today.getDate()
+        ).padStart(2, "0");
+
 
       dateInput.min =
         `${year}-${month}-${day}`;
@@ -745,52 +2753,277 @@ giovanni: {
     }
 
 
-    // --------------------------------------------------
-    // AUTOMATICALLY UPDATE BOOKING SERVICE OPTIONS
-    // --------------------------------------------------
+    /* =========================================================
+       MOBILE MENU
+    ========================================================= */
 
-    const serviceSelect =
-      document.getElementById("service");
+    function setupMobileMenu() {
 
-    if (
-      serviceSelect &&
-      Array.isArray(business.services)
-    ) {
+      const button =
+        document.getElementById(
+          "mobileMenuButton"
+        );
 
-      serviceSelect.innerHTML = "";
-
-      const placeholder =
-        document.createElement("option");
-
-      placeholder.value = "";
-      placeholder.textContent =
-        "Choose an option";
-
-      placeholder.disabled = true;
-      placeholder.selected = true;
-
-      serviceSelect.appendChild(placeholder);
+      const navigation =
+        document.getElementById(
+          "navigation"
+        );
 
 
-      business.services.forEach(function(service) {
+      if (!button || !navigation) {
+        return;
+      }
 
-        const option =
-          document.createElement("option");
 
-        option.value = service
-          .toLowerCase()
-          .replace(/[^a-z0-9]+/g, "-")
-          .replace(/^-|-$/g, "");
+      button.addEventListener(
+        "click",
+        function() {
 
-        option.textContent = service;
+          const isOpen =
+            navigation.classList.toggle(
+              "open"
+            );
 
-        serviceSelect.appendChild(option);
 
-      });
+          button.setAttribute(
+            "aria-expanded",
+            String(isOpen)
+          );
+
+
+          button.setAttribute(
+            "aria-label",
+            isOpen
+              ? "Close navigation"
+              : "Open navigation"
+          );
+
+        }
+      );
+
+
+      navigation
+        .querySelectorAll("a")
+        .forEach(
+          function(link) {
+
+            link.addEventListener(
+              "click",
+              function() {
+
+                navigation.classList.remove(
+                  "open"
+                );
+
+                button.setAttribute(
+                  "aria-expanded",
+                  "false"
+                );
+
+                button.setAttribute(
+                  "aria-label",
+                  "Open navigation"
+                );
+
+              }
+            );
+
+          }
+        );
 
     }
 
-  }
-</script>
+
+    /* =========================================================
+       FORM HANDLING
+    ========================================================= */
+
+    function setupForm() {
+
+      const form =
+        document.getElementById(
+          "bookingForm"
+        );
+
+      const message =
+        document.getElementById(
+          "formMessage"
+        );
+
+
+      if (!form || !message) {
+        return;
+      }
+
+
+      form.addEventListener(
+        "submit",
+        function(event) {
+
+          event.preventDefault();
+
+
+          message.className =
+            "form-message";
+
+          message.textContent =
+            "";
+
+
+          if (!form.checkValidity()) {
+
+            message.classList.add(
+              "error"
+            );
+
+            message.textContent =
+              "Please fill out all required fields.";
+
+            form.reportValidity();
+
+            return;
+
+          }
+
+
+          const formData =
+            new FormData(form);
+
+
+          const fullName =
+            formData.get(
+              "fullName"
+            );
+
+          const email =
+            formData.get(
+              "email"
+            );
+
+          const phone =
+            formData.get(
+              "phone"
+            );
+
+          const service =
+            formData.get(
+              "service"
+            );
+
+          const date =
+            formData.get(
+              "date"
+            );
+
+          const time =
+            formData.get(
+              "time"
+            );
+
+          const notes =
+            formData.get(
+              "notes"
+            );
+
+
+          /*
+            IMPORTANT:
+
+            If you eventually add a real backend,
+            replace this mailto fallback with fetch()
+            to your backend endpoint.
+
+            Until then, this makes the form usable
+            without requiring a server.
+          */
+
+
+          const subject =
+            encodeURIComponent(
+              `New Quote Request - ${business.name}`
+            );
+
+
+          const body =
+            encodeURIComponent(
+
+`New quote request for ${business.name}
+
+Name:
+${fullName}
+
+Email:
+${email}
+
+Phone:
+${phone}
+
+Service:
+${service}
+
+Preferred Date:
+${date || "Not specified"}
+
+Preferred Time:
+${time || "Not specified"}
+
+Additional Details:
+${notes || "None"}
+
+Sent from the website.`
+            );
+
+
+          const mailto =
+            `mailto:${business.email}?subject=${subject}&body=${body}`;
+
+
+          message.classList.add(
+            "success"
+          );
+
+          message.textContent =
+            "Your request is ready to send. Your email app will open next.";
+
+
+          window.location.href =
+            mailto;
+
+        }
+      );
+
+    }
+
+
+    /* =========================================================
+       CURRENT YEAR
+    ========================================================= */
+
+    function setCurrentYear() {
+
+      setText(
+        "currentYear",
+        new Date().getFullYear()
+      );
+
+    }
+
+
+    /* =========================================================
+       INITIALIZE
+    ========================================================= */
+
+    applyBusiness();
+
+    setMinimumDate();
+
+    setupMobileMenu();
+
+    setupForm();
+
+    setCurrentYear();
+
+  </script>
+
 </body>
 </html>
