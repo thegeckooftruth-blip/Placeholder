@@ -4,180 +4,250 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title id="pageTitle">Freelance Template</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://gstatic.com" crossorigin>
+<link href="https://googleapis.com" rel="stylesheet"><style id="styleRoot">
+  /* 1. Global Reset & Modern Baseline */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body { 
+    color: #334155; 
+    background-color: #F8FAFC; 
+    font-family: 'Inter', 'Montserrat', sans-serif; 
+    line-height: 1.6;
+    padding: 0 1rem;
+  }
 
-  <style id="styleRoot">
-    img { max-width: 100%; height: auto; object-fit: cover; }
-    html {
-      scroll-behavior: smooth
+  img { 
+    max-width: 100%; 
+    height: auto; 
+    object-fit: cover; 
+    display: block;
+  }
+
+  /* 2. Typography & Headers */
+  h1, h2, h3 {
+    color: #166534; /* Rich, professional dark green */
+    font-weight: 700;
+  }
+
+  h1 { 
+    font-size: 2.75rem; 
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  header p {
+    text-align: center;
+    font-size: 1.25rem;
+    color: #475569;
+    margin-bottom: 2rem;
+  }
+
+  /* 3. Sleek Navigation Bar */
+  .navbar { 
+    background-color: white; 
+    padding: 1.25rem 0; 
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    max-width: 900px;
+    margin: 0 auto 3rem auto;
+  }
+
+  .nav-links { 
+    display: flex; 
+    justify-content: center; 
+    gap: 2.5rem; 
+  }
+
+  .nav-links a { 
+    font-size: 1.05rem; 
+    color: #166534; 
+    text-decoration: none; 
+    font-weight: 500;
+    padding-bottom: 4px; 
+    transition: all 0.2s ease; 
+    border-bottom: 2px solid transparent;
+  }
+
+  .nav-links a:hover { 
+    color: #15803d; 
+    border-bottom: 2px solid #15803d; 
+  }
+
+  /* 4. Content Containers (About & Services) */
+  #about, #services { 
+    padding: 2rem 0; 
+  }
+
+  .about-container, .services-container { 
+    display: flex; 
+    align-items: center; 
+    gap: 3rem; 
+    max-width: 900px; 
+    margin: 0 auto; 
+    background: #ffffff; 
+    border-radius: 16px; 
+    padding: 2.5rem; 
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03); 
+  }
+
+  .about-text, .services-text {
+    flex: 1;
+  }
+
+  .about-text h2, .services-text h2 { 
+    margin-bottom: 1rem; 
+    font-size: 2rem; 
+  }
+
+  .about-text p, .services-text p { 
+    font-size: 1.05rem; 
+    color: #475569;
+  }
+
+  .about-image, .services-image {
+    flex: 1;
+  }
+
+  .about-image img, .services-image img { 
+    width: 100%; 
+    height: 280px; 
+    border-radius: 12px; 
+  }
+
+  /* 5. Modern Quote Form Widget */
+  #booking { 
+    background: #ffffff; 
+    padding: 2.5rem; 
+    border-radius: 16px; 
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05); 
+    max-width: 550px; 
+    width: 100%; 
+    margin: 4rem auto; 
+  }
+
+  #booking h2 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  #booking p {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #64748b;
+    font-size: 0.95rem;
+  }
+
+  .form-group { 
+    margin-bottom: 1.5rem; 
+  }
+  
+  .form-row { 
+    display: flex; 
+    gap: 1.25rem; 
+  }
+  
+  .form-row .form-group { 
+    flex: 1; 
+  }
+
+  label { 
+    display: block; 
+    margin-bottom: 0.5rem; 
+    font-weight: 600; 
+    font-size: 0.875rem; 
+    color: #334155;
+  }
+
+  input, select, textarea { 
+    width: 100%; 
+    padding: 0.75rem; 
+    border: 1px solid #cbd5e1; 
+    border-radius: 8px; 
+    background-color: #f8fafc;
+    font-size: 1rem; 
+    color: #1e293b;
+    transition: all 0.2s;
+  }
+
+  input:focus, select:focus, textarea:focus { 
+    outline: none;
+    border-color: #166534;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(22, 101, 52, 0.15);
+  }
+
+  /* 6. High-Converting CTA Button */
+  button { 
+    background-color: #166534; 
+    color: #ffffff; 
+    border: none; 
+    border-radius: 8px; 
+    padding: 0.875rem 1.5rem; 
+    font-size: 1.05rem; 
+    font-weight: 600; 
+    cursor: pointer; 
+    width: 100%; 
+    transition: background-color 0.2s, transform 0.1s; 
+    margin-top: 0.5rem;
+  }
+
+  button:hover { 
+    background-color: #15803d; 
+  }
+  
+  button:active {
+    transform: scale(0.98);
+  }
+
+  /* 7. Clean Footer Asset */
+  footer { 
+    text-align: center; 
+    padding: 3rem 0;
+    margin-top: 4rem;
+    border-top: 1px solid #e2e8f0;
+    color: #64748b;
+    font-size: 0.95rem;
+  }
+
+  /* 8. Fully Responsive Breakpoints */
+  @media (max-width: 768px) {
+    h1 { font-size: 2.25rem; }
+    .navbar { margin: 1rem auto; padding: 1rem; }
+    .nav-links { gap: 1.25rem; flex-wrap: wrap; }
+    
+    .about-container, .services-container { 
+      flex-direction: column; 
+      padding: 1.5rem; 
+      gap: 1.5rem;
     }
     
-    body { 
-      color: forestgreen; 
-      background-color: #F5EFD6; 
+    .about-image, .services-image {
+      width: 100%;
+      order: -1; /* Pushes images above text on mobile devices */
     }
-
-    footer { text-align: center; }
-    hr { border: 2px solid forestgreen; }
-
-    h1, header { text-align: center; }
-    h1 { font-size: 45px; }
-
-    header, footer p { font-size: 28px; }
-    header, footer a { font-size: 23px; }
-
-    a { 
-      color: #0B5E2E; 
-      text-decoration: none; 
+    
+    .about-image img, .services-image img { 
+      height: 220px; 
     }
-
-    a:hover { color: forestgreen; }
-
-    .navbar { 
-      background-color: white; 
-      padding: 20px 0; 
-      border-top: 3px solid forestgreen; 
-      border-bottom: 3px solid forestgreen; 
-      margin-top: 25px; 
-      margin-bottom: 25px; 
+    
+    .form-row { 
+      flex-direction: column; 
+      gap: 0; 
     }
-
-    .nav-links { 
-      display: flex; 
-      justify-content: center; 
-      gap: 3rem; 
-    }
-
-    .nav-links a { 
-      font-size: 1.6rem; 
-      color: #0B5E2E; 
-      text-decoration: none; 
-      padding-bottom: 6px; 
-      transition: color 0.2s ease, border-bottom 0.2s ease; 
-    }
-
-    .nav-links a:hover { 
-      color: forestgreen; 
-      border-bottom: 2px solid forestgreen; 
-    }
-
-    #about { padding: 3rem 1rem; }
-
-    .about-container { 
-      display: flex; 
-      align-items: center; 
-      gap: 2rem; 
-      max-width: 900px; 
-      margin: 0 auto; 
-      background: #fff; 
-      border-radius: 15px; 
-      padding: 2rem; 
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
-    }
-
-    .about-text h2 { 
-      margin-bottom: 1rem; 
-      font-size: 2rem; 
-      color: forestgreen; 
-    }
-
-    .about-text p { 
-      line-height: 1.6; 
-      font-size: 1.1rem; 
-    }
-
-    .about-image img { 
-      width: 350px; 
-      height: auto; 
-      border-radius: 12px; 
-      object-fit: cover; 
-    }
-
-    #services { padding: 3rem 1rem; }
-
-    .services-container { 
-      display: flex; 
-      align-items: center; 
-      gap: 2rem; 
-      max-width: 900px; 
-      margin: 0 auto; 
-      background: #fff; 
-      border-radius: 15px; 
-      padding: 2rem; 
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
-    }
-
-    .services-text h2 { 
-      margin-bottom: 1rem; 
-      font-size: 2rem; 
-      color: forestgreen; 
-    }
-
-    .services-image img { 
-      width: 350px; 
-      height: auto; 
-      border-radius: 12px; 
-      object-fit: cover; 
-    }
-
-    h2 { text-align: left; }
-
-    .form-group { margin-bottom: 1.25rem; }
-    .form-row { display: flex; gap: 1rem; }
-    .form-row .form-group { flex: 1; }
-
-    label { 
-      display: block; 
-      margin-bottom: 0.5rem; 
-      font-weight: 500; 
-      font-size: 0.9rem; 
-    }
-
-    input, select, textarea { 
-      width: 100%; 
-      padding: 0.625rem; 
-      border: 1px solid #d1d5db; 
-      border-radius: 4px; 
-      box-sizing: border-box; 
-      font-size: 1rem; 
-    }
-
-    input:focus, select:focus, textarea:focus { 
-      outline: 2px solid forestgreen; 
-      outline-offset: -1px; 
-    }
-
-    button { 
-      background-color: #F5EFD6; 
-      color: forestgreen; 
-      border: 2px solid forestgreen; 
-      border-radius: 15px; 
-      padding: 0.75rem 1.5rem; 
-      font-size: 1rem; 
-      font-weight: 600; 
-      cursor: pointer; 
-      width: 100%; 
-      transition: background-color 0.2s; 
-    }
-
-    button:hover { background-color: white; }
-
-    #booking { 
-      background: #F5EFD6; 
-      padding: 2rem; 
-      border-radius: 8px; 
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); 
-      max-width: 500px; 
-      width: 100%; 
-      margin: 0 auto; 
-    }
-
-    @media (max-width: 768px) {
-      .nav-links { gap: 1.5rem; flex-wrap: wrap; }
-      .about-container, .services-container { flex-direction: column; padding: 1.5rem; }
-      .about-image img, .services-image img { width: 100%; max-width: 100%; }
-      .form-row { flex-direction: column; gap: 0; }
-    }
-  </style>
+  }
+</style>
 </head>
 
 <body id="bodyRoot">
