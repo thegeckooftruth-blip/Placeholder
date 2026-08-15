@@ -6,8 +6,15 @@
   <title id="pageTitle">Freelance Template</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://gstatic.com" crossorigin>
-<link href="https://googleapis.com" rel="stylesheet"><style id="styleRoot">
+<link href="https://googleapis.com" rel="stylesheet">
+  <style id="styleRoot">
   /* 1. Global Reset & Modern Baseline */
+    header button, .navbar + button, h1 ~ button {
+  max-width: 280px;
+  margin: 1.5rem auto 0 auto;
+  display: block;
+}
+
   * {
     box-sizing: border-box;
     margin: 0;
